@@ -1,0 +1,4970 @@
+{
+  "name": "problems",
+  "version": "20261028-233038",
+  "updatedAt": "2026-10-28T15:30:38.176Z",
+  "data": [
+    {
+      "id": "lc-1",
+      "algoId": "array",
+      "name": "两数之和",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/two-sum/"
+    },
+    {
+      "id": "lc-11",
+      "algoId": "array",
+      "name": "盛最多水的容器",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/container-with-most-water/"
+    },
+    {
+      "id": "lc-53",
+      "algoId": "array",
+      "name": "最大子数组和",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "408",
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/maximum-subarray/"
+    },
+    {
+      "id": "lc-206",
+      "algoId": "linked-list",
+      "name": "反转链表",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "408",
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/reverse-linked-list/"
+    },
+    {
+      "id": "nc-78",
+      "algoId": "linked-list",
+      "name": "反转链表",
+      "source": "牛客",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.nowcoder.com/practice/75e878df47f24fdc9dc3e400ec6058ca"
+    },
+    {
+      "id": "lc-141",
+      "algoId": "linked-list",
+      "name": "环形链表",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/linked-list-cycle/"
+    },
+    {
+      "id": "lc-21",
+      "algoId": "linked-list",
+      "name": "合并两个有序链表",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "408",
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/merge-two-sorted-lists/"
+    },
+    {
+      "id": "lc-23",
+      "algoId": "linked-list",
+      "name": "合并 K 个升序链表",
+      "source": "力扣",
+      "difficulty": "困难",
+      "tags": [
+        "面试"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://leetcode.cn/problems/merge-k-sorted-lists/"
+    },
+    {
+      "id": "lc-20",
+      "algoId": "stack",
+      "name": "有效的括号",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "408",
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/valid-parentheses/"
+    },
+    {
+      "id": "lg-1044",
+      "algoId": "stack",
+      "name": "[NOIP2003] 栈",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P1044"
+    },
+    {
+      "id": "lc-739",
+      "algoId": "stack",
+      "name": "每日温度",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/daily-temperatures/"
+    },
+    {
+      "id": "lc-42",
+      "algoId": "stack",
+      "name": "接雨水",
+      "source": "力扣",
+      "difficulty": "困难",
+      "tags": [
+        "面试"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://leetcode.cn/problems/trapping-rain-water/"
+    },
+    {
+      "id": "lc-232",
+      "algoId": "queue",
+      "name": "用栈实现队列",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "408",
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/implement-queue-using-stacks/"
+    },
+    {
+      "id": "lc-225",
+      "algoId": "queue",
+      "name": "用队列实现栈",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/implement-stack-using-queues/"
+    },
+    {
+      "id": "lc-1-h",
+      "algoId": "hash-table",
+      "name": "两数之和",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/two-sum/"
+    },
+    {
+      "id": "lc-242",
+      "algoId": "hash-table",
+      "name": "有效的字母异位词",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/valid-anagram/"
+    },
+    {
+      "id": "lc-49",
+      "algoId": "hash-table",
+      "name": "字母异位词分组",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/group-anagrams/"
+    },
+    {
+      "id": "lc-146",
+      "algoId": "hash-table",
+      "name": "LRU 缓存",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/lru-cache/"
+    },
+    {
+      "id": "lc-347",
+      "algoId": "hash-table",
+      "name": "前 K 个高频元素",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试",
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/top-k-frequent-elements/"
+    },
+    {
+      "id": "lc-344",
+      "algoId": "string",
+      "name": "反转字符串",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/reverse-string/"
+    },
+    {
+      "id": "lc-125",
+      "algoId": "string",
+      "name": "验证回文串",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/valid-palindrome/"
+    },
+    {
+      "id": "lc-14",
+      "algoId": "string",
+      "name": "最长公共前缀",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/longest-common-prefix/"
+    },
+    {
+      "id": "lc-167",
+      "algoId": "two-pointers",
+      "name": "两数之和 II - 输入有序数组",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/"
+    },
+    {
+      "id": "lc-283",
+      "algoId": "two-pointers",
+      "name": "移动零",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/move-zeroes/"
+    },
+    {
+      "id": "lc-15",
+      "algoId": "two-pointers",
+      "name": "三数之和",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/3sum/"
+    },
+    {
+      "id": "lc-209",
+      "algoId": "sliding-window",
+      "name": "长度最小的子数组",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/minimum-size-subarray-sum/"
+    },
+    {
+      "id": "lc-3",
+      "algoId": "sliding-window",
+      "name": "无重复字符的最长子串",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/longest-substring-without-repeating-characters/"
+    },
+    {
+      "id": "lc-76",
+      "algoId": "sliding-window",
+      "name": "最小覆盖子串",
+      "source": "力扣",
+      "difficulty": "困难",
+      "tags": [
+        "面试"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://leetcode.cn/problems/minimum-window-substring/"
+    },
+    {
+      "id": "lg-1115",
+      "algoId": "prefix-sum",
+      "name": "最大子段和",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛",
+        "408"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P1115"
+    },
+    {
+      "id": "lc-560",
+      "algoId": "prefix-sum",
+      "name": "和为 K 的子数组",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/subarray-sum-equals-k/"
+    },
+    {
+      "id": "lc-238",
+      "algoId": "prefix-sum",
+      "name": "除自身以外数组的乘积",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/product-of-array-except-self/"
+    },
+    {
+      "id": "lc-1109",
+      "algoId": "difference",
+      "name": "航班预订统计",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/corporate-flight-bookings/"
+    },
+    {
+      "id": "lg-1177",
+      "algoId": "sorting",
+      "name": "[模板] 快速排序",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛",
+        "408"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P1177"
+    },
+    {
+      "id": "lc-912",
+      "algoId": "sorting",
+      "name": "排序数组",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/sort-an-array/"
+    },
+    {
+      "id": "nc-118",
+      "algoId": "sorting",
+      "name": "数组中的逆序对",
+      "source": "牛客",
+      "difficulty": "中等",
+      "tags": [
+        "408",
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.nowcoder.com/practice/96bd6684e04a44eb80e6a68efc0ec6c5"
+    },
+    {
+      "id": "lc-215",
+      "algoId": "sorting",
+      "name": "数组中的第 K 个最大元素",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试",
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/kth-largest-element-in-an-array/"
+    },
+    {
+      "id": "lc-704",
+      "algoId": "binary-search",
+      "name": "二分查找",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "408",
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/binary-search/"
+    },
+    {
+      "id": "lc-35",
+      "algoId": "binary-search",
+      "name": "搜索插入位置",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/search-insert-position/"
+    },
+    {
+      "id": "lc-34",
+      "algoId": "binary-search",
+      "name": "在排序数组中查找元素的第一个和最后一个位置",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/"
+    },
+    {
+      "id": "lc-46",
+      "algoId": "backtracking",
+      "name": "全排列",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试",
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/permutations/"
+    },
+    {
+      "id": "lc-78",
+      "algoId": "backtracking",
+      "name": "子集",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/subsets/"
+    },
+    {
+      "id": "lg-1219",
+      "algoId": "backtracking",
+      "name": "[USACO1.5] 八皇后",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1219"
+    },
+    {
+      "id": "lc-51",
+      "algoId": "backtracking",
+      "name": "N 皇后",
+      "source": "力扣",
+      "difficulty": "困难",
+      "tags": [
+        "面试",
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://leetcode.cn/problems/n-queens/"
+    },
+    {
+      "id": "lc-94",
+      "algoId": "binary-tree",
+      "name": "二叉树的中序遍历",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "408",
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/binary-tree-inorder-traversal/"
+    },
+    {
+      "id": "lc-104",
+      "algoId": "binary-tree",
+      "name": "二叉树的最大深度",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "408",
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/maximum-depth-of-binary-tree/"
+    },
+    {
+      "id": "lc-226",
+      "algoId": "binary-tree",
+      "name": "翻转二叉树",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/invert-binary-tree/"
+    },
+    {
+      "id": "lc-98",
+      "algoId": "binary-tree",
+      "name": "验证二叉搜索树",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "408",
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/validate-binary-search-tree/"
+    },
+    {
+      "id": "lg-3378",
+      "algoId": "heap",
+      "name": "[模板] 堆",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P3378"
+    },
+    {
+      "id": "lc-215-h",
+      "algoId": "heap",
+      "name": "数组中的第 K 个最大元素",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/kth-largest-element-in-an-array/"
+    },
+    {
+      "id": "lc-347-h",
+      "algoId": "heap",
+      "name": "前 K 个高频元素",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/top-k-frequent-elements/"
+    },
+    {
+      "id": "lc-200",
+      "algoId": "graph",
+      "name": "岛屿数量",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试",
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/number-of-islands/"
+    },
+    {
+      "id": "lc-207",
+      "algoId": "graph",
+      "name": "课程表",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "408",
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/course-schedule/"
+    },
+    {
+      "id": "lg-3371",
+      "algoId": "shortest-path",
+      "name": "[模板] 单源最短路径（弱化版）",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P3371"
+    },
+    {
+      "id": "lg-4779",
+      "algoId": "shortest-path",
+      "name": "[模板] 单源最短路径（标准版）",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P4779"
+    },
+    {
+      "id": "lc-743",
+      "algoId": "shortest-path",
+      "name": "网络延迟时间",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/network-delay-time/"
+    },
+    {
+      "id": "lg-3367",
+      "algoId": "union-find",
+      "name": "[模板] 并查集",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P3367"
+    },
+    {
+      "id": "lc-547",
+      "algoId": "union-find",
+      "name": "省份数量",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "408",
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/number-of-provinces/"
+    },
+    {
+      "id": "lc-684",
+      "algoId": "union-find",
+      "name": "冗余连接",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试",
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/redundant-connection/"
+    },
+    {
+      "id": "lc-455",
+      "algoId": "greedy",
+      "name": "分发饼干",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/assign-cookies/"
+    },
+    {
+      "id": "lc-55",
+      "algoId": "greedy",
+      "name": "跳跃游戏",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试",
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/jump-game/"
+    },
+    {
+      "id": "lc-435",
+      "algoId": "greedy",
+      "name": "无重叠区间",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/non-overlapping-intervals/"
+    },
+    {
+      "id": "lc-70",
+      "algoId": "dp",
+      "name": "爬楼梯",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "408",
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/climbing-stairs/"
+    },
+    {
+      "id": "lc-198",
+      "algoId": "dp",
+      "name": "打家劫舍",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/house-robber/"
+    },
+    {
+      "id": "lg-1048",
+      "algoId": "dp",
+      "name": "[NOIP2005] 采药",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛",
+        "408"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P1048"
+    },
+    {
+      "id": "lc-300",
+      "algoId": "dp",
+      "name": "最长递增子序列",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试",
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/longest-increasing-subsequence/"
+    },
+    {
+      "id": "lc-322",
+      "algoId": "dp",
+      "name": "零钱兑换",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/coin-change/"
+    },
+    {
+      "id": "bst-1",
+      "algoId": "binary-search-tree",
+      "name": "二叉搜索树中的搜索",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/search-in-a-binary-search-tree/"
+    },
+    {
+      "id": "bst-2",
+      "algoId": "binary-search-tree",
+      "name": "二叉搜索树中的插入操作",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/insert-into-a-binary-search-tree/"
+    },
+    {
+      "id": "bst-3",
+      "algoId": "binary-search-tree",
+      "name": "将有序数组转换为二叉搜索树",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "408",
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/convert-sorted-array-to-binary-search-tree/"
+    },
+    {
+      "id": "bst-4",
+      "algoId": "binary-search-tree",
+      "name": "二叉搜索树的最近公共祖先",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/"
+    },
+    {
+      "id": "bst-5",
+      "algoId": "binary-search-tree",
+      "name": "二叉搜索树中第 K 小的元素",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/kth-smallest-element-in-a-bst/"
+    },
+    {
+      "id": "bst-6",
+      "algoId": "binary-search-tree",
+      "name": "删除二叉搜索树中的节点",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/delete-node-in-a-bst/"
+    },
+    {
+      "id": "bst-7",
+      "algoId": "binary-search-tree",
+      "name": "把二叉搜索树转换为累加树",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/convert-bst-to-greater-tree/"
+    },
+    {
+      "id": "bst-8",
+      "algoId": "binary-search-tree",
+      "name": "二叉搜索子树的最大键值和",
+      "source": "力扣",
+      "difficulty": "困难",
+      "tags": [
+        "面试"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://leetcode.cn/problems/maximum-sum-bst-in-binary-tree/"
+    },
+    {
+      "id": "dfs-1",
+      "algoId": "depth-first-search",
+      "name": "图像渲染",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/flood-fill/"
+    },
+    {
+      "id": "dfs-2",
+      "algoId": "depth-first-search",
+      "name": "岛屿的周长",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/island-perimeter/"
+    },
+    {
+      "id": "dfs-3",
+      "algoId": "depth-first-search",
+      "name": "迷宫",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P1605"
+    },
+    {
+      "id": "dfs-4",
+      "algoId": "depth-first-search",
+      "name": "岛屿的最大面积",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/max-area-of-island/"
+    },
+    {
+      "id": "dfs-5",
+      "algoId": "depth-first-search",
+      "name": "被围绕的区域",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试",
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/surrounded-regions/"
+    },
+    {
+      "id": "dfs-6",
+      "algoId": "depth-first-search",
+      "name": "钥匙和房间",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/keys-and-rooms/"
+    },
+    {
+      "id": "dfs-7",
+      "algoId": "depth-first-search",
+      "name": "所有可能的路径",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试",
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/all-paths-from-source-to-target/"
+    },
+    {
+      "id": "dfs-8",
+      "algoId": "depth-first-search",
+      "name": "最大人工岛",
+      "source": "力扣",
+      "difficulty": "困难",
+      "tags": [
+        "面试"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://leetcode.cn/problems/making-a-large-island/"
+    },
+    {
+      "id": "bfs-1",
+      "algoId": "breadth-first-search",
+      "name": "二叉树的最小深度",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/minimum-depth-of-binary-tree/"
+    },
+    {
+      "id": "bfs-2",
+      "algoId": "breadth-first-search",
+      "name": "马的遍历",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P1443"
+    },
+    {
+      "id": "bfs-3",
+      "algoId": "breadth-first-search",
+      "name": "二叉树的层序遍历",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "408",
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/binary-tree-level-order-traversal/"
+    },
+    {
+      "id": "bfs-4",
+      "algoId": "breadth-first-search",
+      "name": "腐烂的橘子",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/rotting-oranges/"
+    },
+    {
+      "id": "bfs-5",
+      "algoId": "breadth-first-search",
+      "name": "01 矩阵",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/01-matrix/"
+    },
+    {
+      "id": "bfs-6",
+      "algoId": "breadth-first-search",
+      "name": "打开转盘锁",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/open-the-lock/"
+    },
+    {
+      "id": "bfs-7",
+      "algoId": "breadth-first-search",
+      "name": "单词接龙",
+      "source": "力扣",
+      "difficulty": "困难",
+      "tags": [
+        "面试"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://leetcode.cn/problems/word-ladder/"
+    },
+    {
+      "id": "topo-1",
+      "algoId": "topological-sort",
+      "name": "杂务",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P1113"
+    },
+    {
+      "id": "topo-2",
+      "algoId": "topological-sort",
+      "name": "课程表 II",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "408",
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/course-schedule-ii/"
+    },
+    {
+      "id": "topo-3",
+      "algoId": "topological-sort",
+      "name": "找到最终的安全状态",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/find-eventual-safe-states/"
+    },
+    {
+      "id": "topo-4",
+      "algoId": "topological-sort",
+      "name": "最大食物链计数",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P4017"
+    },
+    {
+      "id": "topo-5",
+      "algoId": "topological-sort",
+      "name": "矩阵中的最长递增路径",
+      "source": "力扣",
+      "difficulty": "困难",
+      "tags": [
+        "面试",
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://leetcode.cn/problems/longest-increasing-path-in-a-matrix/"
+    },
+    {
+      "id": "topo-6",
+      "algoId": "topological-sort",
+      "name": "项目管理",
+      "source": "力扣",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://leetcode.cn/problems/sort-items-by-groups-respecting-dependencies/"
+    },
+    {
+      "id": "mst-1",
+      "algoId": "minimum-spanning-tree",
+      "name": "[模板] 最小生成树",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P3366"
+    },
+    {
+      "id": "mst-2",
+      "algoId": "minimum-spanning-tree",
+      "name": "最短网络 Agri-Net",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P1546"
+    },
+    {
+      "id": "mst-3",
+      "algoId": "minimum-spanning-tree",
+      "name": "繁忙的都市",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P2330"
+    },
+    {
+      "id": "mst-4",
+      "algoId": "minimum-spanning-tree",
+      "name": "口袋的天空",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1195"
+    },
+    {
+      "id": "mst-5",
+      "algoId": "minimum-spanning-tree",
+      "name": "局域网",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P2820"
+    },
+    {
+      "id": "mst-6",
+      "algoId": "minimum-spanning-tree",
+      "name": "连接所有点的最小费用",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/min-cost-to-connect-all-points/"
+    },
+    {
+      "id": "spfa-1",
+      "algoId": "spfa",
+      "name": "[模板] 负环",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P3385"
+    },
+    {
+      "id": "spfa-2",
+      "algoId": "spfa",
+      "name": "最短路计数",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P1144"
+    },
+    {
+      "id": "spfa-3",
+      "algoId": "spfa",
+      "name": "拉近距离",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P2136"
+    },
+    {
+      "id": "spfa-4",
+      "algoId": "spfa",
+      "name": "[模板] 差分约束算法",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P5960"
+    },
+    {
+      "id": "spfa-5",
+      "algoId": "spfa",
+      "name": "K 站中转内最便宜的航班",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/cheapest-flights-within-k-stops/"
+    },
+    {
+      "id": "spfa-6",
+      "algoId": "spfa",
+      "name": "小 K 的农场",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1993"
+    },
+    {
+      "id": "knap-1",
+      "algoId": "knapsack",
+      "name": "装箱问题",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛",
+        "408"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P1049"
+    },
+    {
+      "id": "knap-2",
+      "algoId": "knapsack",
+      "name": "开心的金明",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P1060"
+    },
+    {
+      "id": "knap-3",
+      "algoId": "knapsack",
+      "name": "疯狂的采药",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P1616"
+    },
+    {
+      "id": "knap-4",
+      "algoId": "knapsack",
+      "name": "分割等和子集",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/partition-equal-subset-sum/"
+    },
+    {
+      "id": "knap-5",
+      "algoId": "knapsack",
+      "name": "目标和",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/target-sum/"
+    },
+    {
+      "id": "knap-6",
+      "algoId": "knapsack",
+      "name": "零钱兑换 II",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/coin-change-2/"
+    },
+    {
+      "id": "knap-7",
+      "algoId": "knapsack",
+      "name": "完全平方数",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/perfect-squares/"
+    },
+    {
+      "id": "knap-8",
+      "algoId": "knapsack",
+      "name": "宝物筛选",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1776"
+    },
+    {
+      "id": "ldp-1",
+      "algoId": "linear-dp",
+      "name": "杨辉三角",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/pascals-triangle/"
+    },
+    {
+      "id": "ldp-2",
+      "algoId": "linear-dp",
+      "name": "最长连续递增序列",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/longest-continuous-increasing-subsequence/"
+    },
+    {
+      "id": "ldp-3",
+      "algoId": "linear-dp",
+      "name": "乘积最大子数组",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/maximum-product-subarray/"
+    },
+    {
+      "id": "ldp-4",
+      "algoId": "linear-dp",
+      "name": "不同路径",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/unique-paths/"
+    },
+    {
+      "id": "ldp-5",
+      "algoId": "linear-dp",
+      "name": "最小路径和",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/minimum-path-sum/"
+    },
+    {
+      "id": "ldp-6",
+      "algoId": "linear-dp",
+      "name": "三角形最小路径和",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/triangle/"
+    },
+    {
+      "id": "ldp-7",
+      "algoId": "linear-dp",
+      "name": "最大正方形",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/maximal-square/"
+    },
+    {
+      "id": "idp-1",
+      "algoId": "interval-dp",
+      "name": "石子合并（弱化版）",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P1775"
+    },
+    {
+      "id": "idp-2",
+      "algoId": "interval-dp",
+      "name": "[NOI1995] 石子合并",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1880"
+    },
+    {
+      "id": "idp-3",
+      "algoId": "interval-dp",
+      "name": "最长回文子序列",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/longest-palindromic-subsequence/"
+    },
+    {
+      "id": "idp-4",
+      "algoId": "interval-dp",
+      "name": "最长回文子串",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/longest-palindromic-substring/"
+    },
+    {
+      "id": "idp-5",
+      "algoId": "interval-dp",
+      "name": "戳气球",
+      "source": "力扣",
+      "difficulty": "困难",
+      "tags": [
+        "面试"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://leetcode.cn/problems/burst-balloons/"
+    },
+    {
+      "id": "idp-6",
+      "algoId": "interval-dp",
+      "name": "奇怪的打印机",
+      "source": "力扣",
+      "difficulty": "困难",
+      "tags": [
+        "面试"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://leetcode.cn/problems/strange-printer/"
+    },
+    {
+      "id": "tdp-1",
+      "algoId": "tree-dp",
+      "name": "二叉树的直径",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/diameter-of-binary-tree/"
+    },
+    {
+      "id": "tdp-2",
+      "algoId": "tree-dp",
+      "name": "打家劫舍 III",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/house-robber-iii/"
+    },
+    {
+      "id": "tdp-3",
+      "algoId": "tree-dp",
+      "name": "没有上司的舞会",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1352"
+    },
+    {
+      "id": "tdp-4",
+      "algoId": "tree-dp",
+      "name": "最大子树和",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1122"
+    },
+    {
+      "id": "tdp-5",
+      "algoId": "tree-dp",
+      "name": "二叉树中的最大路径和",
+      "source": "力扣",
+      "difficulty": "困难",
+      "tags": [
+        "面试"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://leetcode.cn/problems/binary-tree-maximum-path-sum/"
+    },
+    {
+      "id": "tdp-6",
+      "algoId": "tree-dp",
+      "name": "监控二叉树",
+      "source": "力扣",
+      "difficulty": "困难",
+      "tags": [
+        "面试"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://leetcode.cn/problems/binary-tree-cameras/"
+    },
+    {
+      "id": "ddp-1",
+      "algoId": "digit-dp",
+      "name": "[SCOI2009] windy 数",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P2657"
+    },
+    {
+      "id": "ddp-2",
+      "algoId": "digit-dp",
+      "name": "[ZJOI2010] 数字计数",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P2602"
+    },
+    {
+      "id": "ddp-3",
+      "algoId": "digit-dp",
+      "name": "数字 1 的个数",
+      "source": "力扣",
+      "difficulty": "困难",
+      "tags": [
+        "面试"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://leetcode.cn/problems/number-of-digit-one/"
+    },
+    {
+      "id": "ddp-4",
+      "algoId": "digit-dp",
+      "name": "不含连续 1 的非负整数",
+      "source": "力扣",
+      "difficulty": "困难",
+      "tags": [
+        "面试"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://leetcode.cn/problems/non-negative-integers-without-consecutive-ones/"
+    },
+    {
+      "id": "ddp-5",
+      "algoId": "digit-dp",
+      "name": "最大为 N 的数字组合",
+      "source": "力扣",
+      "difficulty": "困难",
+      "tags": [
+        "面试"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://leetcode.cn/problems/numbers-at-most-n-given-digit-set/"
+    },
+    {
+      "id": "ddp-6",
+      "algoId": "digit-dp",
+      "name": "[CQOI2016] 手机号码",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P4124"
+    },
+    {
+      "id": "kmp-1",
+      "algoId": "kmp",
+      "name": "找出字符串中第一个匹配项的下标",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/"
+    },
+    {
+      "id": "kmp-2",
+      "algoId": "kmp",
+      "name": "[模板] KMP 字符串匹配",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P3375"
+    },
+    {
+      "id": "kmp-3",
+      "algoId": "kmp",
+      "name": "重复的子字符串",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/repeated-substring-pattern/"
+    },
+    {
+      "id": "kmp-4",
+      "algoId": "kmp",
+      "name": "重复叠加字符串匹配",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/repeated-string-match/"
+    },
+    {
+      "id": "kmp-5",
+      "algoId": "kmp",
+      "name": "[BOI2009] Radio Transmission 无线传输",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P4391"
+    },
+    {
+      "id": "kmp-6",
+      "algoId": "kmp",
+      "name": "最短回文串",
+      "source": "力扣",
+      "difficulty": "困难",
+      "tags": [
+        "面试"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://leetcode.cn/problems/shortest-palindrome/"
+    },
+    {
+      "id": "trie-1",
+      "algoId": "trie",
+      "name": "实现 Trie (前缀树)",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/implement-trie-prefix-tree/"
+    },
+    {
+      "id": "trie-2",
+      "algoId": "trie",
+      "name": "[模板] 字典树",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P8306"
+    },
+    {
+      "id": "trie-3",
+      "algoId": "trie",
+      "name": "于是他错误的点名开始了",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P2580"
+    },
+    {
+      "id": "trie-4",
+      "algoId": "trie",
+      "name": "单词替换",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/replace-words/"
+    },
+    {
+      "id": "trie-5",
+      "algoId": "trie",
+      "name": "键值映射",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/map-sum-pairs/"
+    },
+    {
+      "id": "trie-6",
+      "algoId": "trie",
+      "name": "添加与搜索单词 - 数据结构设计",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/design-add-and-search-words-data-structure/"
+    },
+    {
+      "id": "trie-7",
+      "algoId": "trie",
+      "name": "数组中两个数的最大异或值",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://leetcode.cn/problems/maximum-xor-of-two-numbers-in-an-array/"
+    },
+    {
+      "id": "diff-2",
+      "algoId": "difference",
+      "name": "拼车",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/car-pooling/"
+    },
+    {
+      "id": "diff-3",
+      "algoId": "difference",
+      "name": "人口最多的年份",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/maximum-population-year/"
+    },
+    {
+      "id": "diff-4",
+      "algoId": "difference",
+      "name": "语文成绩",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P2367"
+    },
+    {
+      "id": "diff-5",
+      "algoId": "difference",
+      "name": "地毯",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P3397"
+    },
+    {
+      "id": "queue-1",
+      "algoId": "queue",
+      "name": "最近的请求次数",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/number-of-recent-calls/"
+    },
+    {
+      "id": "queue-2",
+      "algoId": "queue",
+      "name": "买票需要的时间",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/time-needed-to-buy-tickets/"
+    },
+    {
+      "id": "queue-3",
+      "algoId": "queue",
+      "name": "Dota2 参议院",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/dota2-senate/"
+    },
+    {
+      "id": "queue-4",
+      "algoId": "queue",
+      "name": "按递增顺序显示卡牌",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/reveal-cards-in-increasing-order/"
+    },
+    {
+      "id": "graph-1",
+      "algoId": "graph",
+      "name": "找到小镇的法官",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/find-the-town-judge/"
+    },
+    {
+      "id": "graph-2",
+      "algoId": "graph",
+      "name": "连通网络的操作次数",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/number-of-operations-to-make-network-connected/"
+    },
+    {
+      "id": "graph-3",
+      "algoId": "graph",
+      "name": "除法求值",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/evaluate-division/"
+    },
+    {
+      "id": "graph-4",
+      "algoId": "graph",
+      "name": "克隆图",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/clone-graph/"
+    },
+    {
+      "id": "arr-1",
+      "algoId": "array",
+      "name": "删除有序数组中的重复项",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/remove-duplicates-from-sorted-array/"
+    },
+    {
+      "id": "arr-2",
+      "algoId": "array",
+      "name": "合并两个有序数组",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/merge-sorted-array/"
+    },
+    {
+      "id": "arr-3",
+      "algoId": "array",
+      "name": "轮转数组",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/rotate-array/"
+    },
+    {
+      "id": "ll-1",
+      "algoId": "linked-list",
+      "name": "链表的中间结点",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/middle-of-the-linked-list/"
+    },
+    {
+      "id": "stk-1",
+      "algoId": "stack",
+      "name": "最小栈",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/min-stack/"
+    },
+    {
+      "id": "stk-2",
+      "algoId": "stack",
+      "name": "下一个更大元素 I",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/next-greater-element-i/"
+    },
+    {
+      "id": "ht-1",
+      "algoId": "hash-table",
+      "name": "最长连续序列",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/longest-consecutive-sequence/"
+    },
+    {
+      "id": "str-1",
+      "algoId": "string",
+      "name": "字符串相加",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/add-strings/"
+    },
+    {
+      "id": "str-2",
+      "algoId": "string",
+      "name": "反转字符串中的单词",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/reverse-words-in-a-string/"
+    },
+    {
+      "id": "str-3",
+      "algoId": "string",
+      "name": "字符串转换整数 (atoi)",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/string-to-integer-atoi/"
+    },
+    {
+      "id": "tp-1",
+      "algoId": "two-pointers",
+      "name": "反转字符串中的元音字母",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/reverse-vowels-of-a-string/"
+    },
+    {
+      "id": "tp-2",
+      "algoId": "two-pointers",
+      "name": "验证回文字符串 Ⅱ",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/valid-palindrome-ii/"
+    },
+    {
+      "id": "tp-3",
+      "algoId": "two-pointers",
+      "name": "最接近的三数之和",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/3sum-closest/"
+    },
+    {
+      "id": "sw-1",
+      "algoId": "sliding-window",
+      "name": "存在重复元素 II",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/contains-duplicate-ii/"
+    },
+    {
+      "id": "sw-2",
+      "algoId": "sliding-window",
+      "name": "找到字符串中所有字母异位词",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/find-all-anagrams-in-a-string/"
+    },
+    {
+      "id": "sw-3",
+      "algoId": "sliding-window",
+      "name": "字符串的排列",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/permutation-in-string/"
+    },
+    {
+      "id": "ps-1",
+      "algoId": "prefix-sum",
+      "name": "区域和检索 - 数组不可变",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/range-sum-query-immutable/"
+    },
+    {
+      "id": "ps-2",
+      "algoId": "prefix-sum",
+      "name": "寻找数组的中心下标",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/find-pivot-index/"
+    },
+    {
+      "id": "ps-3",
+      "algoId": "prefix-sum",
+      "name": "二维区域和检索 - 矩阵不可变",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/range-sum-query-2d-immutable/"
+    },
+    {
+      "id": "diff-6",
+      "algoId": "difference",
+      "name": "海底高铁",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P3406"
+    },
+    {
+      "id": "gd-1",
+      "algoId": "greedy",
+      "name": "跳跃游戏 II",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/jump-game-ii/"
+    },
+    {
+      "id": "gd-2",
+      "algoId": "greedy",
+      "name": "用最少数量的箭引爆气球",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/minimum-number-of-arrows-to-burst-balloons/"
+    },
+    {
+      "id": "gd-3",
+      "algoId": "greedy",
+      "name": "合并区间",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/merge-intervals/"
+    },
+    {
+      "id": "sort-1",
+      "algoId": "sorting",
+      "name": "颜色分类",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/sort-colors/"
+    },
+    {
+      "id": "sort-2",
+      "algoId": "sorting",
+      "name": "排序链表",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/sort-list/"
+    },
+    {
+      "id": "bs-1",
+      "algoId": "binary-search",
+      "name": "x 的平方根",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/sqrtx/"
+    },
+    {
+      "id": "bs-2",
+      "algoId": "binary-search",
+      "name": "第一个错误的版本",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/first-bad-version/"
+    },
+    {
+      "id": "bs-3",
+      "algoId": "binary-search",
+      "name": "搜索旋转排序数组",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/search-in-rotated-sorted-array/"
+    },
+    {
+      "id": "bt-1",
+      "algoId": "backtracking",
+      "name": "组合总和",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/combination-sum/"
+    },
+    {
+      "id": "bt-2",
+      "algoId": "backtracking",
+      "name": "括号生成",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/generate-parentheses/"
+    },
+    {
+      "id": "btree-1",
+      "algoId": "binary-tree",
+      "name": "对称二叉树",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/symmetric-tree/"
+    },
+    {
+      "id": "btree-2",
+      "algoId": "binary-tree",
+      "name": "平衡二叉树",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/balanced-binary-tree/"
+    },
+    {
+      "id": "hp-1",
+      "algoId": "heap",
+      "name": "数据流中的第 K 大元素",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/kth-largest-element-in-a-stream/"
+    },
+    {
+      "id": "hp-2",
+      "algoId": "heap",
+      "name": "合并果子",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P1090"
+    },
+    {
+      "id": "hp-3",
+      "algoId": "heap",
+      "name": "数据流的中位数",
+      "source": "力扣",
+      "difficulty": "困难",
+      "tags": [
+        "面试"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://leetcode.cn/problems/find-median-from-data-stream/"
+    },
+    {
+      "id": "sp-1",
+      "algoId": "shortest-path",
+      "name": "概率最大的路径",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/path-with-maximum-probability/"
+    },
+    {
+      "id": "sp-2",
+      "algoId": "shortest-path",
+      "name": "营救",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1396"
+    },
+    {
+      "id": "sp-3",
+      "algoId": "shortest-path",
+      "name": "到达目的地的方案数",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/number-of-ways-to-arrive-at-destination/"
+    },
+    {
+      "id": "uf-1",
+      "algoId": "union-find",
+      "name": "亲戚",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P1551"
+    },
+    {
+      "id": "uf-2",
+      "algoId": "union-find",
+      "name": "等式方程的可满足性",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/satisfiability-of-equality-equations/"
+    },
+    {
+      "id": "uf-3",
+      "algoId": "union-find",
+      "name": "账户合并",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/accounts-merge/"
+    },
+    {
+      "id": "dpp-1",
+      "algoId": "dp",
+      "name": "买卖股票的最佳时机",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/"
+    },
+    {
+      "id": "disc-1",
+      "algoId": "discretization",
+      "name": "逆序对",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P1908"
+    },
+    {
+      "id": "disc-2",
+      "algoId": "discretization",
+      "name": "数组序号转换",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/rank-transform-of-an-array/"
+    },
+    {
+      "id": "disc-3",
+      "algoId": "discretization",
+      "name": "最接近神的人",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1774"
+    },
+    {
+      "id": "disc-4",
+      "algoId": "discretization",
+      "name": "两点之间不包含任何点的最宽垂直面积",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/widest-vertical-area-between-two-points-containing-no-points/"
+    },
+    {
+      "id": "disc-5",
+      "algoId": "discretization",
+      "name": "计算右侧小于当前元素的个数",
+      "source": "力扣",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://leetcode.cn/problems/count-of-smaller-numbers-after-self/"
+    },
+    {
+      "id": "disc-6",
+      "algoId": "discretization",
+      "name": "区间和的个数",
+      "source": "力扣",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://leetcode.cn/problems/count-of-range-sum/"
+    },
+    {
+      "id": "mfp-1",
+      "algoId": "matrix-fastpow",
+      "name": "[模板] 矩阵快速幂",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P3390"
+    },
+    {
+      "id": "mfp-2",
+      "algoId": "matrix-fastpow",
+      "name": "斐波那契数列",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P1962"
+    },
+    {
+      "id": "mfp-3",
+      "algoId": "matrix-fastpow",
+      "name": "[模板] 矩阵加速（数列）",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P1939"
+    },
+    {
+      "id": "mfp-4",
+      "algoId": "matrix-fastpow",
+      "name": "第 N 个泰波那契数",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/n-th-tribonacci-number/"
+    },
+    {
+      "id": "mfp-5",
+      "algoId": "matrix-fastpow",
+      "name": "统计元音字母序列的数目",
+      "source": "力扣",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/count-vowels-permutation/"
+    },
+    {
+      "id": "mfp-6",
+      "algoId": "matrix-fastpow",
+      "name": "[TJOI2017] 可乐",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P5789"
+    },
+    {
+      "id": "scc-1",
+      "algoId": "tarjan-scc",
+      "name": "[USACO06JAN] The Cow Prom S",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P2863"
+    },
+    {
+      "id": "scc-2",
+      "algoId": "tarjan-scc",
+      "name": "消息扩散",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P2002"
+    },
+    {
+      "id": "scc-3",
+      "algoId": "tarjan-scc",
+      "name": "[模板] 缩点",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P3387"
+    },
+    {
+      "id": "scc-4",
+      "algoId": "tarjan-scc",
+      "name": "[USACO03FALL] 受欢迎的牛",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P2341"
+    },
+    {
+      "id": "scc-5",
+      "algoId": "tarjan-scc",
+      "name": "[USACO5.3] 校园网 Network of Schools",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P2746"
+    },
+    {
+      "id": "scc-6",
+      "algoId": "tarjan-scc",
+      "name": "查找集群内的关键连接",
+      "source": "力扣",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://leetcode.cn/problems/critical-connections-in-a-network/"
+    },
+    {
+      "id": "bip-1",
+      "algoId": "bipartite-graph",
+      "name": "[模板] 二分图最大匹配",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P3386"
+    },
+    {
+      "id": "bip-2",
+      "algoId": "bipartite-graph",
+      "name": "判断二分图",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/is-graph-bipartite/"
+    },
+    {
+      "id": "bip-3",
+      "algoId": "bipartite-graph",
+      "name": "可能的二分法",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/possible-bipartition/"
+    },
+    {
+      "id": "bip-4",
+      "algoId": "bipartite-graph",
+      "name": "关押罪犯",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1525"
+    },
+    {
+      "id": "bip-5",
+      "algoId": "bipartite-graph",
+      "name": "[ZJOI2007] 矩阵游戏",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1129"
+    },
+    {
+      "id": "bip-6",
+      "algoId": "bipartite-graph",
+      "name": "[SCOI2010] 连续攻击游戏",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P1640"
+    },
+    {
+      "id": "euler-1",
+      "algoId": "euler-circuit",
+      "name": "无序字母对",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P1341"
+    },
+    {
+      "id": "euler-2",
+      "algoId": "euler-circuit",
+      "name": "[USACO3.3] 骑马修栅栏",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P2731"
+    },
+    {
+      "id": "euler-3",
+      "algoId": "euler-circuit",
+      "name": "词链",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1127"
+    },
+    {
+      "id": "euler-4",
+      "algoId": "euler-circuit",
+      "name": "[USACO05JAN] Watchcow",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P6066"
+    },
+    {
+      "id": "euler-5",
+      "algoId": "euler-circuit",
+      "name": "重新安排行程",
+      "source": "力扣",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/reconstruct-itinerary/"
+    },
+    {
+      "id": "euler-6",
+      "algoId": "euler-circuit",
+      "name": "破解保险箱",
+      "source": "力扣",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://leetcode.cn/problems/cracking-the-safe/"
+    },
+    {
+      "id": "mo-1",
+      "algoId": "mo-algorithm",
+      "name": "数列找不同",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P3901"
+    },
+    {
+      "id": "mo-2",
+      "algoId": "mo-algorithm",
+      "name": "小B的询问",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P2709"
+    },
+    {
+      "id": "mo-3",
+      "algoId": "mo-algorithm",
+      "name": "[SDOI2009] HH的项链",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1972"
+    },
+    {
+      "id": "mo-4",
+      "algoId": "mo-algorithm",
+      "name": "[国家集训队] 小Z的袜子",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1494"
+    },
+    {
+      "id": "mo-5",
+      "algoId": "mo-algorithm",
+      "name": "[CQOI2018] 异或序列",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P4462"
+    },
+    {
+      "id": "mo-6",
+      "algoId": "mo-algorithm",
+      "name": "[SNOI2017] 一个简单的询问",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P5268"
+    },
+    {
+      "id": "fw-1",
+      "algoId": "fenwick-tree",
+      "name": "[模板] 树状数组 1",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P3374"
+    },
+    {
+      "id": "fw-2",
+      "algoId": "fenwick-tree",
+      "name": "[模板] 树状数组 2",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P3368"
+    },
+    {
+      "id": "fw-3",
+      "algoId": "fenwick-tree",
+      "name": "Agent2",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P4939"
+    },
+    {
+      "id": "fw-4",
+      "algoId": "fenwick-tree",
+      "name": "区域和检索 - 数组可修改",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/range-sum-query-mutable/"
+    },
+    {
+      "id": "fw-5",
+      "algoId": "fenwick-tree",
+      "name": "区间方差",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P5142"
+    },
+    {
+      "id": "fw-6",
+      "algoId": "fenwick-tree",
+      "name": "翻转对",
+      "source": "力扣",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://leetcode.cn/problems/reverse-pairs/"
+    },
+    {
+      "id": "seg-1",
+      "algoId": "segment-tree",
+      "name": "[模板] 线段树 1",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P3372"
+    },
+    {
+      "id": "seg-2",
+      "algoId": "segment-tree",
+      "name": "[模板] 线段树 2",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P3373"
+    },
+    {
+      "id": "seg-3",
+      "algoId": "segment-tree",
+      "name": "扶苏的问题",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1253"
+    },
+    {
+      "id": "seg-4",
+      "algoId": "segment-tree",
+      "name": "小白逛公园",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P4513"
+    },
+    {
+      "id": "seg-5",
+      "algoId": "segment-tree",
+      "name": "[USACO08FEB] Hotel",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P2894"
+    },
+    {
+      "id": "seg-6",
+      "algoId": "segment-tree",
+      "name": "掉落的方块",
+      "source": "力扣",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://leetcode.cn/problems/falling-squares/"
+    },
+    {
+      "id": "pst-1",
+      "algoId": "persistent-segment-tree",
+      "name": "[模板] 可持久化线段树 2（主席树）",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P3834"
+    },
+    {
+      "id": "pst-2",
+      "algoId": "persistent-segment-tree",
+      "name": "[模板] 可持久化线段树 1（可持久化数组）",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P3919"
+    },
+    {
+      "id": "pst-3",
+      "algoId": "persistent-segment-tree",
+      "name": "[POI2014] KUR-Couriers",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P3567"
+    },
+    {
+      "id": "pst-4",
+      "algoId": "persistent-segment-tree",
+      "name": "Rmq Problem / mex",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P4137"
+    },
+    {
+      "id": "pst-5",
+      "algoId": "persistent-segment-tree",
+      "name": "[SDOI2010] 粟粟的书架",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P2468"
+    },
+    {
+      "id": "pst-6",
+      "algoId": "persistent-segment-tree",
+      "name": "Count on a tree",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P2633"
+    },
+    {
+      "id": "flow-1",
+      "algoId": "network-flow-dinic",
+      "name": "[模板] 网络最大流",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P3376"
+    },
+    {
+      "id": "flow-2",
+      "algoId": "network-flow-dinic",
+      "name": "飞行员配对方案问题",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P2756"
+    },
+    {
+      "id": "flow-3",
+      "algoId": "network-flow-dinic",
+      "name": "试题库问题",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P2763"
+    },
+    {
+      "id": "flow-4",
+      "algoId": "network-flow-dinic",
+      "name": "圆桌问题",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P3254"
+    },
+    {
+      "id": "flow-5",
+      "algoId": "network-flow-dinic",
+      "name": "[USACO4.4] 追查坏牛奶 Pollutant Control",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1344"
+    },
+    {
+      "id": "flow-6",
+      "algoId": "network-flow-dinic",
+      "name": "方格取数问题",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P2774"
+    },
+    {
+      "id": "zf-1",
+      "algoId": "z-function",
+      "name": "[模板] 扩展 KMP（Z 函数）",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P5410"
+    },
+    {
+      "id": "zf-2",
+      "algoId": "z-function",
+      "name": "[模板] 最小表示法",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P1368"
+    },
+    {
+      "id": "zf-3",
+      "algoId": "z-function",
+      "name": "最长快乐前缀",
+      "source": "力扣",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/longest-happy-prefix/"
+    },
+    {
+      "id": "zf-4",
+      "algoId": "z-function",
+      "name": "[NOI2014] 动物园",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P2375"
+    },
+    {
+      "id": "zf-5",
+      "algoId": "z-function",
+      "name": "[模板] 失配树",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P5829"
+    },
+    {
+      "id": "zf-6",
+      "algoId": "z-function",
+      "name": "[NOIP2020] 字符串匹配",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P7114"
+    },
+    {
+      "id": "sa-1",
+      "algoId": "suffix-array",
+      "name": "[模板] 后缀排序",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P3809"
+    },
+    {
+      "id": "sa-2",
+      "algoId": "suffix-array",
+      "name": "不同子串个数",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P2408"
+    },
+    {
+      "id": "sa-3",
+      "algoId": "suffix-array",
+      "name": "[USACO07DEC] Best Cow Line",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P2870"
+    },
+    {
+      "id": "sa-4",
+      "algoId": "suffix-array",
+      "name": "[USACO06DEC] Milk Patterns",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P2852"
+    },
+    {
+      "id": "sa-5",
+      "algoId": "suffix-array",
+      "name": "[JSOI2007] 字符加密",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P4051"
+    },
+    {
+      "id": "sa-6",
+      "algoId": "suffix-array",
+      "name": "[SDOI2016] 生成魔咒",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P4070"
+    },
+    {
+      "id": "cd-1",
+      "algoId": "centroid-decomposition",
+      "name": "[模板] 点分治 1",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P3806"
+    },
+    {
+      "id": "cd-2",
+      "algoId": "centroid-decomposition",
+      "name": "Tree",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P4178"
+    },
+    {
+      "id": "cd-3",
+      "algoId": "centroid-decomposition",
+      "name": "[国家集训队] 聪聪可可",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P2634"
+    },
+    {
+      "id": "cd-4",
+      "algoId": "centroid-decomposition",
+      "name": "[IOI2011] Race",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P4149"
+    },
+    {
+      "id": "cd-5",
+      "algoId": "centroid-decomposition",
+      "name": "树上游戏",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P2664"
+    },
+    {
+      "id": "cd-6",
+      "algoId": "centroid-decomposition",
+      "name": "[ZJOI2015] 幻想乡战略游戏",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P3345"
+    },
+    {
+      "id": "ch-1",
+      "algoId": "convex-hull",
+      "name": "[USACO5.1] 圈奶牛 Fencing the Cows",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P2742"
+    },
+    {
+      "id": "ch-2",
+      "algoId": "convex-hull",
+      "name": "安装栅栏",
+      "source": "力扣",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/erect-the-fence/"
+    },
+    {
+      "id": "ch-3",
+      "algoId": "convex-hull",
+      "name": "城墙",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P2116"
+    },
+    {
+      "id": "ch-4",
+      "algoId": "convex-hull",
+      "name": "[USACO03FALL] Beauty Contest",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1452"
+    },
+    {
+      "id": "ch-5",
+      "algoId": "convex-hull",
+      "name": "[SHOI2012] 信用卡凸包",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P3829"
+    },
+    {
+      "id": "ch-6",
+      "algoId": "convex-hull",
+      "name": "[SCOI2007] 最大土地面积",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P4166"
+    },
+    {
+      "id": "lg-P1029",
+      "algoId": "number-theory",
+      "name": "最大公约数和最小公倍数问题",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P1029"
+    },
+    {
+      "id": "lg-P3383",
+      "algoId": "number-theory",
+      "name": "线性筛素数",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P3383"
+    },
+    {
+      "id": "lg-P1082",
+      "algoId": "number-theory",
+      "name": "同余方程",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1082"
+    },
+    {
+      "id": "lg-P3811",
+      "algoId": "number-theory",
+      "name": "乘法逆元",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P3811"
+    },
+    {
+      "id": "lg-P2158",
+      "algoId": "number-theory",
+      "name": "仪仗队",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P2158"
+    },
+    {
+      "id": "lg-P1414",
+      "algoId": "number-theory",
+      "name": "又是毕业季II",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P1414"
+    },
+    {
+      "id": "lc-62",
+      "algoId": "combinatorics",
+      "name": "不同路径",
+      "source": "力扣",
+      "difficulty": "简单",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/unique-paths/"
+    },
+    {
+      "id": "lg-P2822",
+      "algoId": "combinatorics",
+      "name": "组合数问题",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P2822"
+    },
+    {
+      "id": "lg-P1313",
+      "algoId": "combinatorics",
+      "name": "计算系数",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1313"
+    },
+    {
+      "id": "lg-P1641",
+      "algoId": "combinatorics",
+      "name": "生成字符串",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1641"
+    },
+    {
+      "id": "lg-P2532",
+      "algoId": "combinatorics",
+      "name": "树屋阶梯",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P2532"
+    },
+    {
+      "id": "lg-P1066",
+      "algoId": "combinatorics",
+      "name": "2^k进制数",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P1066"
+    },
+    {
+      "id": "ac-91",
+      "algoId": "bitmask-dp",
+      "name": "最短Hamilton路径",
+      "source": "AcWing",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.acwing.com/problem/content/93/"
+    },
+    {
+      "id": "lg-P1433",
+      "algoId": "bitmask-dp",
+      "name": "吃奶酪",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1433"
+    },
+    {
+      "id": "lg-P1171",
+      "algoId": "bitmask-dp",
+      "name": "售货员的难题",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1171"
+    },
+    {
+      "id": "lg-P1879",
+      "algoId": "bitmask-dp",
+      "name": "玉米田",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1879"
+    },
+    {
+      "id": "lc-473",
+      "algoId": "bitmask-dp",
+      "name": "火柴拼正方形",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/matchsticks-to-square/"
+    },
+    {
+      "id": "lg-P2704",
+      "algoId": "bitmask-dp",
+      "name": "炮兵阵地",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P2704"
+    },
+    {
+      "id": "lc-1227",
+      "algoId": "probability-dp",
+      "name": "飞机座位分配概率",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/airplane-seat-assignment-probability/"
+    },
+    {
+      "id": "lg-P4316",
+      "algoId": "probability-dp",
+      "name": "绿豆蛙的归宿",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P4316"
+    },
+    {
+      "id": "lg-P1654",
+      "algoId": "probability-dp",
+      "name": "OSU!",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1654"
+    },
+    {
+      "id": "lg-P4550",
+      "algoId": "probability-dp",
+      "name": "收集邮票",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P4550"
+    },
+    {
+      "id": "lg-P1850",
+      "algoId": "probability-dp",
+      "name": "换教室",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P1850"
+    },
+    {
+      "id": "lg-P2473",
+      "algoId": "probability-dp",
+      "name": "奖励关",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P2473"
+    },
+    {
+      "id": "lg-P3379",
+      "algoId": "lca",
+      "name": "最近公共祖先",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P3379"
+    },
+    {
+      "id": "ac-1172",
+      "algoId": "lca",
+      "name": "祖孙询问",
+      "source": "AcWing",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.acwing.com/problem/content/1174/"
+    },
+    {
+      "id": "lg-P3258",
+      "algoId": "lca",
+      "name": "松鼠的新家",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P3258"
+    },
+    {
+      "id": "lg-P3398",
+      "algoId": "lca",
+      "name": "仓鼠找sugar",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P3398"
+    },
+    {
+      "id": "lg-P4281",
+      "algoId": "lca",
+      "name": "紧急集合",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P4281"
+    },
+    {
+      "id": "lg-P1967",
+      "algoId": "lca",
+      "name": "货车运输",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P1967"
+    },
+    {
+      "id": "lg-P3370",
+      "algoId": "string-hashing",
+      "name": "字符串哈希",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P3370"
+    },
+    {
+      "id": "ac-139",
+      "algoId": "string-hashing",
+      "name": "回文子串的最大长度",
+      "source": "AcWing",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.acwing.com/problem/content/141/"
+    },
+    {
+      "id": "lg-P2852",
+      "algoId": "string-hashing",
+      "name": "牛奶模式",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P2852"
+    },
+    {
+      "id": "lc-5",
+      "algoId": "string-hashing",
+      "name": "最长回文子串",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/longest-palindromic-substring/"
+    },
+    {
+      "id": "lc-1316",
+      "algoId": "string-hashing",
+      "name": "不同的循环子字符串",
+      "source": "力扣",
+      "difficulty": "困难",
+      "tags": [
+        "面试"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://leetcode.cn/problems/distinct-echo-substrings/"
+    },
+    {
+      "id": "lg-P1117",
+      "algoId": "string-hashing",
+      "name": "优秀的拆分",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P1117"
+    },
+    {
+      "id": "lg-P3808",
+      "algoId": "ac-automaton",
+      "name": "AC自动机",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P3808"
+    },
+    {
+      "id": "ac-1282",
+      "algoId": "ac-automaton",
+      "name": "搜索关键词",
+      "source": "AcWing",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.acwing.com/problem/content/1284/"
+    },
+    {
+      "id": "lg-P3796",
+      "algoId": "ac-automaton",
+      "name": "AC自动机加强版",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P3796"
+    },
+    {
+      "id": "lg-P5357",
+      "algoId": "ac-automaton",
+      "name": "AC自动机二次加强版",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P5357"
+    },
+    {
+      "id": "lg-P4052",
+      "algoId": "ac-automaton",
+      "name": "文本生成器",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P4052"
+    },
+    {
+      "id": "lg-P2444",
+      "algoId": "ac-automaton",
+      "name": "病毒",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P2444"
+    },
+    {
+      "id": "lg-P3865",
+      "algoId": "binary-lifting",
+      "name": "ST表",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P3865"
+    },
+    {
+      "id": "lg-P1816",
+      "algoId": "binary-lifting",
+      "name": "忠诚",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P1816"
+    },
+    {
+      "id": "ac-109",
+      "algoId": "binary-lifting",
+      "name": "天才的记忆",
+      "source": "AcWing",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.acwing.com/problem/content/111/"
+    },
+    {
+      "id": "ac-1270",
+      "algoId": "binary-lifting",
+      "name": "数列区间最大值",
+      "source": "AcWing",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.acwing.com/problem/content/1272/"
+    },
+    {
+      "id": "lc-1483",
+      "algoId": "binary-lifting",
+      "name": "树节点的第K个祖先",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/kth-ancestor-of-a-tree-node/"
+    },
+    {
+      "id": "lg-P2251",
+      "algoId": "binary-lifting",
+      "name": "质量检测",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P2251"
+    },
+    {
+      "id": "lg-P1226",
+      "algoId": "fast-power",
+      "name": "快速幂",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P1226"
+    },
+    {
+      "id": "lc-50",
+      "algoId": "fast-power",
+      "name": "Pow(x, n)",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/powx-n/"
+    },
+    {
+      "id": "lg-P1965",
+      "algoId": "fast-power",
+      "name": "转圈游戏",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1965"
+    },
+    {
+      "id": "lg-P1939",
+      "algoId": "fast-power",
+      "name": "矩阵加速",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1939"
+    },
+    {
+      "id": "lg-P1349",
+      "algoId": "fast-power",
+      "name": "广义斐波那契",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1349"
+    },
+    {
+      "id": "lg-P1306",
+      "algoId": "fast-power",
+      "name": "斐波那契公约数",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P1306"
+    },
+    {
+      "id": "lg-P3389",
+      "algoId": "gaussian-elimination",
+      "name": "高斯消元",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P3389"
+    },
+    {
+      "id": "lg-P2455",
+      "algoId": "gaussian-elimination",
+      "name": "线性方程组",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P2455"
+    },
+    {
+      "id": "ac-207",
+      "algoId": "gaussian-elimination",
+      "name": "球形空间产生器",
+      "source": "AcWing",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.acwing.com/problem/content/209/"
+    },
+    {
+      "id": "ac-884",
+      "algoId": "gaussian-elimination",
+      "name": "高斯消元解异或线性方程组",
+      "source": "AcWing",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.acwing.com/problem/content/886/"
+    },
+    {
+      "id": "lg-P2962",
+      "algoId": "gaussian-elimination",
+      "name": "灯",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P2962"
+    },
+    {
+      "id": "lg-P4111",
+      "algoId": "gaussian-elimination",
+      "name": "小Z的房间",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P4111"
+    },
+    {
+      "id": "lg-P3369",
+      "algoId": "balanced-bst",
+      "name": "普通平衡树",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P3369"
+    },
+    {
+      "id": "ac-253",
+      "algoId": "balanced-bst",
+      "name": "普通平衡树",
+      "source": "AcWing",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.acwing.com/problem/content/255/"
+    },
+    {
+      "id": "lg-P6136",
+      "algoId": "balanced-bst",
+      "name": "普通平衡树加强版",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P6136"
+    },
+    {
+      "id": "lg-P1486",
+      "algoId": "balanced-bst",
+      "name": "郁闷的出纳员",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1486"
+    },
+    {
+      "id": "lg-P2234",
+      "algoId": "balanced-bst",
+      "name": "营业额统计",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P2234"
+    },
+    {
+      "id": "lg-P3224",
+      "algoId": "balanced-bst",
+      "name": "永无乡",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P3224"
+    },
+    {
+      "id": "lg-P3384",
+      "algoId": "heavy-light-decomposition",
+      "name": "树链剖分",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P3384"
+    },
+    {
+      "id": "ac-256",
+      "algoId": "heavy-light-decomposition",
+      "name": "树链剖分",
+      "source": "AcWing",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.acwing.com/problem/content/258/"
+    },
+    {
+      "id": "lg-P2146",
+      "algoId": "heavy-light-decomposition",
+      "name": "软件包管理器",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P2146"
+    },
+    {
+      "id": "lg-P2486",
+      "algoId": "heavy-light-decomposition",
+      "name": "染色",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P2486"
+    },
+    {
+      "id": "lg-P2590",
+      "algoId": "heavy-light-decomposition",
+      "name": "树的统计",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P2590"
+    },
+    {
+      "id": "lg-P1505",
+      "algoId": "heavy-light-decomposition",
+      "name": "旅游",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P1505"
+    },
+    {
+      "id": "lg-P3381",
+      "algoId": "min-cost-flow",
+      "name": "最小费用最大流",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P3381"
+    },
+    {
+      "id": "ac-2174",
+      "algoId": "min-cost-flow",
+      "name": "最小费用最大流",
+      "source": "AcWing",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.acwing.com/problem/content/2176/"
+    },
+    {
+      "id": "lg-P2045",
+      "algoId": "min-cost-flow",
+      "name": "方格取数加强版",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P2045"
+    },
+    {
+      "id": "lg-P2053",
+      "algoId": "min-cost-flow",
+      "name": "修车",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P2053"
+    },
+    {
+      "id": "lg-P2050",
+      "algoId": "min-cost-flow",
+      "name": "美食节",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P2050"
+    },
+    {
+      "id": "lg-P2469",
+      "algoId": "min-cost-flow",
+      "name": "星际竞速",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P2469"
+    },
+    {
+      "id": "lg-P4782",
+      "algoId": "two-sat",
+      "name": "2-SAT",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P4782"
+    },
+    {
+      "id": "ac-2402",
+      "algoId": "two-sat",
+      "name": "2-SAT",
+      "source": "AcWing",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.acwing.com/problem/content/2404/"
+    },
+    {
+      "id": "lg-P4171",
+      "algoId": "two-sat",
+      "name": "满汉全席",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P4171"
+    },
+    {
+      "id": "lg-P5782",
+      "algoId": "two-sat",
+      "name": "和平委员会",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P5782"
+    },
+    {
+      "id": "lg-P3825",
+      "algoId": "two-sat",
+      "name": "游戏",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P3825"
+    },
+    {
+      "id": "lg-P3209",
+      "algoId": "two-sat",
+      "name": "平面图判定",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P3209"
+    },
+    {
+      "id": "lg-P3804",
+      "algoId": "suffix-automaton",
+      "name": "后缀自动机",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P3804"
+    },
+    {
+      "id": "ac-2744",
+      "algoId": "suffix-automaton",
+      "name": "后缀自动机",
+      "source": "AcWing",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.acwing.com/problem/content/2746/"
+    },
+    {
+      "id": "lg-P3975",
+      "algoId": "suffix-automaton",
+      "name": "弦论",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P3975"
+    },
+    {
+      "id": "lg-P4070",
+      "algoId": "suffix-automaton",
+      "name": "生成魔咒",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P4070"
+    },
+    {
+      "id": "lg-P2336",
+      "algoId": "suffix-automaton",
+      "name": "喵星球上的点名",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P2336"
+    },
+    {
+      "id": "lg-P4248",
+      "algoId": "suffix-automaton",
+      "name": "差异",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P4248"
+    },
+    {
+      "id": "lg-P3805",
+      "algoId": "manacher",
+      "name": "Manacher算法",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P3805"
+    },
+    {
+      "id": "lg-P3501",
+      "algoId": "manacher",
+      "name": "[POI2010]反对称字符串",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P3501"
+    },
+    {
+      "id": "lc-647",
+      "algoId": "manacher",
+      "name": "回文子串",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/palindromic-substrings/"
+    },
+    {
+      "id": "lg-P4555",
+      "algoId": "manacher",
+      "name": "最长双回文串",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P4555"
+    },
+    {
+      "id": "lg-P1659",
+      "algoId": "manacher",
+      "name": "拉拉队排练",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1659"
+    },
+    {
+      "id": "lc-214",
+      "algoId": "manacher",
+      "name": "最短回文串",
+      "source": "力扣",
+      "difficulty": "困难",
+      "tags": [
+        "面试"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://leetcode.cn/problems/shortest-palindrome/"
+    },
+    {
+      "id": "lg-P3195",
+      "algoId": "dp-optimization",
+      "name": "玩具装箱",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P3195"
+    },
+    {
+      "id": "lc-239",
+      "algoId": "dp-optimization",
+      "name": "滑动窗口最大值",
+      "source": "力扣",
+      "difficulty": "困难",
+      "tags": [
+        "面试"
+      ],
+      "tier": "入门巩固",
+      "url": "https://leetcode.cn/problems/sliding-window-maximum/"
+    },
+    {
+      "id": "lg-P2900",
+      "algoId": "dp-optimization",
+      "name": "土地征用",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P2900"
+    },
+    {
+      "id": "lg-P3628",
+      "algoId": "dp-optimization",
+      "name": "特别行动队",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P3628"
+    },
+    {
+      "id": "lg-P4360",
+      "algoId": "dp-optimization",
+      "name": "锯木厂选址",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P4360"
+    },
+    {
+      "id": "lg-P4767",
+      "algoId": "dp-optimization",
+      "name": "邮局",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P4767"
+    },
+    {
+      "id": "lg-P3455",
+      "algoId": "mobius-inversion",
+      "name": "ZAP-Queries",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P3455"
+    },
+    {
+      "id": "lg-P2257",
+      "algoId": "mobius-inversion",
+      "name": "YY的GCD",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P2257"
+    },
+    {
+      "id": "lg-P2522",
+      "algoId": "mobius-inversion",
+      "name": "Problem b",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P2522"
+    },
+    {
+      "id": "lg-P3327",
+      "algoId": "mobius-inversion",
+      "name": "约数个数和",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P3327"
+    },
+    {
+      "id": "lg-P1829",
+      "algoId": "mobius-inversion",
+      "name": "Crash的数字表格",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P1829"
+    },
+    {
+      "id": "lg-P3704",
+      "algoId": "mobius-inversion",
+      "name": "数字表格",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P3704"
+    },
+    {
+      "id": "lg-P3810",
+      "algoId": "cdq-divide",
+      "name": "三维偏序",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P3810"
+    },
+    {
+      "id": "ac-254",
+      "algoId": "cdq-divide",
+      "name": "三维偏序",
+      "source": "AcWing",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.acwing.com/problem/content/256/"
+    },
+    {
+      "id": "lg-P2487",
+      "algoId": "cdq-divide",
+      "name": "拦截导弹",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P2487"
+    },
+    {
+      "id": "lg-P3157",
+      "algoId": "cdq-divide",
+      "name": "动态逆序对",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P3157"
+    },
+    {
+      "id": "lg-P4169",
+      "algoId": "cdq-divide",
+      "name": "天使玩偶",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P4169"
+    },
+    {
+      "id": "lg-P2163",
+      "algoId": "cdq-divide",
+      "name": "园丁的烦恼",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P2163"
+    },
+    {
+      "id": "lg-P3402",
+      "algoId": "persistent-dsu",
+      "name": "可持久化并查集",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P3402"
+    },
+    {
+      "id": "lg-P3919",
+      "algoId": "persistent-dsu",
+      "name": "可持久化数组",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P3919"
+    },
+    {
+      "id": "lg-P2617",
+      "algoId": "persistent-dsu",
+      "name": "Dynamic Rankings",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P2617"
+    },
+    {
+      "id": "lg-P4137",
+      "algoId": "persistent-dsu",
+      "name": "Rmq Problem / mex",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P4137"
+    },
+    {
+      "id": "lg-P4587",
+      "algoId": "persistent-dsu",
+      "name": "神秘数",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P4587"
+    },
+    {
+      "id": "lg-P4735",
+      "algoId": "persistent-dsu",
+      "name": "最大异或和",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P4735"
+    }
+  ]
+}
