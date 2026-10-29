@@ -1,7 +1,7 @@
 {
   "name": "problems",
-  "version": "20261029-010701",
-  "updatedAt": "2026-10-28T17:07:01.752Z",
+  "version": "20261029-142227",
+  "updatedAt": "2026-10-29T06:22:27.582Z",
   "data": [
     {
       "id": "lc-1",
@@ -1415,6 +1415,54 @@
       "url": "https://www.luogu.com.cn/problem/P1776"
     },
     {
+      "id": "kadv-1",
+      "algoId": "knapsack-adv",
+      "name": "通天之分组背包",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P1757"
+    },
+    {
+      "id": "kadv-2",
+      "algoId": "knapsack-adv",
+      "name": "金明的预算方案",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1064"
+    },
+    {
+      "id": "kadv-3",
+      "algoId": "knapsack-adv",
+      "name": "樱花",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1833"
+    },
+    {
+      "id": "kadv-4",
+      "algoId": "knapsack-adv",
+      "name": "榨取kkksc03",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1855"
+    },
+    {
       "id": "ldp-1",
       "algoId": "linear-dp",
       "name": "杨辉三角",
@@ -1499,6 +1547,102 @@
       "url": "https://leetcode.cn/problems/maximal-square/"
     },
     {
+      "id": "ldp-8",
+      "algoId": "linear-dp",
+      "name": "导弹拦截",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1020"
+    },
+    {
+      "id": "ldp-9",
+      "algoId": "linear-dp",
+      "name": "合唱队形",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1091"
+    },
+    {
+      "id": "ldp-10",
+      "algoId": "linear-dp",
+      "name": "尼克的任务",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1280"
+    },
+    {
+      "id": "sdp-1",
+      "algoId": "sequence-dp",
+      "name": "[模板] 最长公共子序列",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1439"
+    },
+    {
+      "id": "sdp-2",
+      "algoId": "sequence-dp",
+      "name": "最长公共子序列",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/longest-common-subsequence/"
+    },
+    {
+      "id": "sdp-3",
+      "algoId": "sequence-dp",
+      "name": "编辑距离",
+      "source": "力扣",
+      "difficulty": "中等",
+      "tags": [
+        "面试"
+      ],
+      "tier": "中档真题",
+      "url": "https://leetcode.cn/problems/edit-distance/"
+    },
+    {
+      "id": "sdp-4",
+      "algoId": "sequence-dp",
+      "name": "相似基因",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1140"
+    },
+    {
+      "id": "sdp-5",
+      "algoId": "sequence-dp",
+      "name": "传纸条",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1006"
+    },
+    {
       "id": "idp-1",
       "algoId": "interval-dp",
       "name": "石子合并（弱化版）",
@@ -1571,6 +1715,126 @@
       "url": "https://leetcode.cn/problems/strange-printer/"
     },
     {
+      "id": "idp-7",
+      "algoId": "interval-dp",
+      "name": "能量项链",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1063"
+    },
+    {
+      "id": "idp-8",
+      "algoId": "interval-dp",
+      "name": "涂色",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P4170"
+    },
+    {
+      "id": "cdp-1",
+      "algoId": "counting-dp",
+      "name": "摆花",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P1077"
+    },
+    {
+      "id": "cdp-2",
+      "algoId": "counting-dp",
+      "name": "[NOIP2003] 栈",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P1044"
+    },
+    {
+      "id": "cdp-3",
+      "algoId": "counting-dp",
+      "name": "组合数问题",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P2822"
+    },
+    {
+      "id": "cdp-4",
+      "algoId": "counting-dp",
+      "name": "数的划分",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1025"
+    },
+    {
+      "id": "gdp-1",
+      "algoId": "game-dp",
+      "name": "[模板] nim 游戏",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P2197"
+    },
+    {
+      "id": "gdp-2",
+      "algoId": "game-dp",
+      "name": "取火柴游戏",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1247"
+    },
+    {
+      "id": "gdp-3",
+      "algoId": "game-dp",
+      "name": "欧几里得的游戏",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1290"
+    },
+    {
+      "id": "gdp-4",
+      "algoId": "game-dp",
+      "name": "[SHOI2002] 取石子游戏",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P2252"
+    },
+    {
       "id": "tdp-1",
       "algoId": "tree-dp",
       "name": "二叉树的直径",
@@ -1641,6 +1905,66 @@
       ],
       "tier": "拔高挑战",
       "url": "https://leetcode.cn/problems/binary-tree-cameras/"
+    },
+    {
+      "id": "tdp-7",
+      "algoId": "tree-dp",
+      "name": "战略游戏",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P2016"
+    },
+    {
+      "id": "tadv-1",
+      "algoId": "tree-dp-adv",
+      "name": "选课",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P2014"
+    },
+    {
+      "id": "tadv-2",
+      "algoId": "tree-dp-adv",
+      "name": "有线电视网",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1273"
+    },
+    {
+      "id": "tadv-3",
+      "algoId": "tree-dp-adv",
+      "name": "STA-Station",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P3478"
+    },
+    {
+      "id": "tadv-4",
+      "algoId": "tree-dp-adv",
+      "name": "城市环路",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1453"
     },
     {
       "id": "ddp-1",
@@ -3813,6 +4137,114 @@
       ],
       "tier": "拔高挑战",
       "url": "https://www.luogu.com.cn/problem/P2473"
+    },
+    {
+      "id": "grp-1",
+      "algoId": "graph-dp",
+      "name": "最短路计数",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1144"
+    },
+    {
+      "id": "grp-2",
+      "algoId": "graph-dp",
+      "name": "最长路",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1807"
+    },
+    {
+      "id": "grp-3",
+      "algoId": "graph-dp",
+      "name": "采蘑菇",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P2656"
+    },
+    {
+      "id": "grp-4",
+      "algoId": "graph-dp",
+      "name": "软件安装",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P2515"
+    },
+    {
+      "id": "dpm-1",
+      "algoId": "dp-matrix",
+      "name": "斐波那契数列",
+      "source": "洛谷",
+      "difficulty": "简单",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "入门巩固",
+      "url": "https://www.luogu.com.cn/problem/P1962"
+    },
+    {
+      "id": "dpm-2",
+      "algoId": "dp-matrix",
+      "name": "[模板] 矩阵加速",
+      "source": "洛谷",
+      "difficulty": "中等",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "中档真题",
+      "url": "https://www.luogu.com.cn/problem/P1939"
+    },
+    {
+      "id": "dpm-3",
+      "algoId": "dp-matrix",
+      "name": "牛继电器",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P2886"
+    },
+    {
+      "id": "pdp-1",
+      "algoId": "plug-dp",
+      "name": "[模板] 插头dp",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P5056"
+    },
+    {
+      "id": "pdp-2",
+      "algoId": "plug-dp",
+      "name": "神奇游乐园",
+      "source": "洛谷",
+      "difficulty": "困难",
+      "tags": [
+        "竞赛"
+      ],
+      "tier": "拔高挑战",
+      "url": "https://www.luogu.com.cn/problem/P3190"
     },
     {
       "id": "lg-P3379",

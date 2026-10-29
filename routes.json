@@ -1,7 +1,7 @@
 {
   "name": "routes",
-  "version": "20261029-010701",
-  "updatedAt": "2026-10-28T17:07:01.752Z",
+  "version": "20261029-142227",
+  "updatedAt": "2026-10-29T06:22:27.582Z",
   "data": [
     {
       "id": "kaoyan",
@@ -67,6 +67,7 @@
         "dp",
         "knapsack",
         "linear-dp",
+        "sequence-dp",
         "graph",
         "depth-first-search",
         "breadth-first-search",
@@ -122,6 +123,14 @@
         "bitmask-dp",
         "probability-dp",
         "dp-optimization",
+        "knapsack-adv",
+        "sequence-dp",
+        "counting-dp",
+        "game-dp",
+        "tree-dp-adv",
+        "graph-dp",
+        "dp-matrix",
+        "plug-dp",
         "kmp",
         "string-hashing",
         "trie",

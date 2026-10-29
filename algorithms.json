@@ -1,7 +1,7 @@
 {
   "name": "algorithms",
-  "version": "20261029-010701",
-  "updatedAt": "2026-10-28T17:07:01.752Z",
+  "version": "20261029-142227",
+  "updatedAt": "2026-10-29T06:22:27.582Z",
   "data": [
     {
       "id": "array",
@@ -695,7 +695,7 @@
         "greedy"
       ],
       "summary": "重叠子问题 + 最优子结构，状态定义 + 转移方程，算法核心难点。",
-      "content": "## 核心思想\n\n动态规划（DP）把大问题分解为**重叠子问题**，通过记忆化 / 自底向上填表避免重复计算。\n\n## 适用条件\n\n1. **最优子结构**：大问题最优解包含子问题最优解。\n2. **重叠子问题**：子问题被反复计算。\n\n## 解题四步\n\n1. **定义状态**：dp[i] 表示什么。\n2. **找转移方程**：dp[i] 与更小状态的关系。\n3. **确定初始值 / 边界**。\n4. **确定计算顺序**，返回目标。\n\n```mermaid\ngraph LR\n  A[\"定义状态 dp\"] --> B[\"状态转移方程\"]\n  B --> C[\"初始边界\"]\n  C --> D[\"按序填表\"]\n  D --> E[\"返回最优解\"]\n```\n\n## 经典题型\n\n- 背包问题（01 / 完全 / 多重）。\n- 最长递增子序列 LIS、最长公共子序列 LCS。\n- 斐波那契、爬楼梯、打家劫舍。\n\n## 复杂度\n\n取决于状态数与转移代价，通常 $O(n)$ 或 $O(n^2)$。",
+      "content": "## 核心思想\n\n动态规划（DP）把大问题分解为**重叠子问题**，通过记忆化 / 自底向上填表避免重复计算。\n\n## 适用条件\n\n1. **最优子结构**：大问题最优解包含子问题最优解。\n2. **重叠子问题**：子问题被反复计算。\n\n## 解题四步\n\n1. **定义状态**：dp[i] 表示什么。\n2. **找转移方程**：dp[i] 与更小状态的关系。\n3. **确定初始值 / 边界**。\n4. **确定计算顺序**，返回目标。\n\n```mermaid\ngraph LR\n  A[\"定义状态 dp\"] --> B[\"状态转移方程\"]\n  B --> C[\"初始边界\"]\n  C --> D[\"按序填表\"]\n  D --> E[\"返回最优解\"]\n```\n\n## 经典题型\n\n- 背包问题（01 / 完全 / 多重）。\n- 最长递增子序列 LIS、最长公共子序列 LCS。\n- 斐波那契、爬楼梯、打家劫舍。\n\n## 复杂度\n\n取决于状态数与转移代价，通常 $O(n)$ 或 $O(n^2)$。\n\n## 记忆化搜索实现\n\nDP 可以自底向上填表，也可以**递归 + 记忆化**（自顶向下）：`memo[state]` 缓存已算结果。适合**状态不连续、转移复杂**的题目（数位 DP、博弈 DP、区间 DP 常用）。两者等价，但记忆化更贴近直觉、不用想循环顺序。\n\n```cpp\n// 例：跳台阶 + 记忆化\nint memo[100];\nint dfs(int i) {\n    if (i <= 1) return 1;\n    if (memo[i]) return memo[i];\n    return memo[i] = dfs(i-1) + dfs(i-2);\n}\n```\n\n## 滚动数组 / 空间优化\n\n若 `dp[i]` 只依赖 `dp[i-1]`（或前两行），用滚动数组把 O(n) 空间降到 O(1)；二维依赖上一行时降到 O(m)。**代价是无法回溯方案**，需要方案时保留完整表。\n\n## 正推 vs 倒推\n\n- **正推**：从起点出发，`dp[到][由]` 逐步填。\n- **倒推**：从终点定义\"到终点的代价\"，逆向递推（期望 DP 几乎必用倒推，见\"概率与期望 DP\"）。\n- **原则**：哪种方向的转移更自然、边界更清晰用哪种，两者结果一致。\n\n## 洛谷经典题\n\n- P1002 过河卒（棋盘 DP 入门）\n- P1048 采药（01 背包入门）\n- P1115 最大子段和（线性 DP 入门）\n- P1020 导弹拦截（LIS + LDS，二分优化）\n\n## 社区经验\n\n1. **状态定义是灵魂**：dp 数组\"表示什么\"想清楚，转移就水到渠成；定义错整题报废。\n2. **先写暴力再优化**：竞赛中先写 $O(n^2)$ 暴力验证思路，再考虑优化手段（见\"DP 优化\"）。\n3. **边界先行**：初始值、越界、空状态都要单独确认，90% 的 DP bug 出在边界。",
       "templateCode": "#include <bits/stdc++.h>\nusing namespace std;\n\n// 爬楼梯：dp[i] = dp[i-1] + dp[i-2]\nint climbStairs(int n) {\n    if (n <= 2) return n;\n    int a = 1, b = 2;\n    for (int i = 3; i <= n; i++) {\n        int c = a + b;\n        a = b; b = c;\n    }\n    return b;\n}\n\n// 01 背包：容量 C，选物品使价值最大\nint knapsack(vector<int>& w, vector<int>& v, int C) {\n    int n = w.size();\n    vector<int> dp(C + 1, 0);\n    for (int i = 0; i < n; i++)\n        for (int j = C; j >= w[i]; j--)\n            dp[j] = max(dp[j], dp[j - w[i]] + v[i]);\n    return dp[C];\n}\n\n// 最长递增子序列 LIS（O(n^2)）\nint lengthOfLIS(vector<int>& nums) {\n    int n = nums.size();\n    vector<int> dp(n, 1);\n    int ans = 1;\n    for (int i = 0; i < n; i++) {\n        for (int j = 0; j < i; j++)\n            if (nums[j] < nums[i]) dp[i] = max(dp[i], dp[j] + 1);\n        ans = max(ans, dp[i]);\n    }\n    return ans;\n}",
       "thinkingQuestions": [
         {
@@ -947,7 +947,7 @@
         "dp"
       ],
       "summary": "01 / 完全 / 多重背包，一维滚动 + 正倒序技巧，面试笔试最高频 DP 类型。",
-      "content": "## 核心思想\n\n背包问题是 DP 的经典模型：给定容量，从若干物品中选取使价值最大。核心是一维滚动数组 `dp[j]` 表示容量 j 时的最大价值。\n\n```mermaid\ngraph TD\n  A[\"遍历物品 i\"] --> B[\"遍历容量 j\"]\n  B --> C[\"dp[j] = max(dp[j], dp[j-w] + v)\"]\n  C --> D{\"还有物品?\"}\n  D -- \"是\" --> A\n  D -- \"否\" --> E[\"dp[C] 为答案\"]\n```\n\n## 三种变体\n\n1. **01 背包**：每件物品选 0/1 次，容量**倒序**遍历。\n2. **完全背包**：每件无限次，容量**正序**遍历。\n3. **多重背包**：每件限 s 次，**二进制拆分**成若干 01 背包物品。\n\n## 复杂度\n\n- 01 / 完全：$O(nC)$\n- 多重（二进制拆分）：$O(nC \\log s)$",
+      "content": "## 核心思想\n\n背包问题是 DP 的经典模型：给定容量，从若干物品中选取使价值最大。核心是一维滚动数组 `dp[j]` 表示容量 j 时的最大价值。\n\n```mermaid\ngraph TD\n  A[\"遍历物品 i\"] --> B[\"遍历容量 j\"]\n  B --> C[\"dp[j] = max(dp[j], dp[j-w] + v)\"]\n  C --> D{\"还有物品?\"}\n  D -- \"是\" --> A\n  D -- \"否\" --> E[\"dp[C] 为答案\"]\n```\n\n## 三种变体\n\n1. **01 背包**：每件物品选 0/1 次，容量**倒序**遍历。\n2. **完全背包**：每件无限次，容量**正序**遍历。\n3. **多重背包**：每件限 s 次，**二进制拆分**成若干 01 背包物品。\n\n## 复杂度\n\n- 01 / 完全：$O(nC)$\n- 多重（二进制拆分）：$O(nC \\log s)$\n\n## 恰好装满 vs 不超过容量\n\n背包题常问\"恰好装满容量 C\"：初始化 `dp[0]=0, dp[1..C]=-INF`（不可达标记），转移不变；\"不超过容量\"则全部初始化为 0。P5020 货币系统（计数 + 恰好）是经典。\n\n## 洛谷经典题\n\n- P1048 采药（01 背包模板）\n- P1616 疯狂的采药（完全背包模板）\n- P1776 宝物筛选（多重背包模板）\n- P1833 樱花（混合背包模板）\n- P1855 榨取kkksc03（二维费用背包）\n- P1064 金明的预算方案（有依赖背包，进阶见\"背包进阶\"章）\n\n## 社区经验\n\n1. 背包的**价值/体积都是相对的**——很多题把\"时间\"\"金钱\"\"血量\"当作体积建模（P1855、P1941 飞扬的小鸟）。\n2. **一维滚动 + 正倒序**是背包的核心，所有变体都围绕它展开，务必吃透原理而非背模板。",
       "templateCode": "#include <bits/stdc++.h>\nusing namespace std;\n\n// 01 背包：容量 C，物品重量 w、价值 v\nint knapsack01(vector<int>& w, vector<int>& v, int C) {\n    vector<int> dp(C + 1, 0);\n    for (int i = 0; i < (int)w.size(); i++)\n        for (int j = C; j >= w[i]; j--)      // 倒序\n            dp[j] = max(dp[j], dp[j - w[i]] + v[i]);\n    return dp[C];\n}\n\n// 完全背包：每种物品无限件\nint knapsackComplete(vector<int>& w, vector<int>& v, int C) {\n    vector<int> dp(C + 1, 0);\n    for (int i = 0; i < (int)w.size(); i++)\n        for (int j = w[i]; j <= C; j++)      // 正序\n            dp[j] = max(dp[j], dp[j - w[i]] + v[i]);\n    return dp[C];\n}\n\n// 多重背包：每种物品限 s 件（二进制拆分转 01）\nint knapsackMultiple(vector<int>& w, vector<int>& v, vector<int>& s, int C) {\n    vector<int> nw, nv;\n    for (int i = 0; i < (int)w.size(); i++) {\n        int k = 1;\n        while (k <= s[i]) {\n            nw.push_back(w[i] * k);\n            nv.push_back(v[i] * k);\n            s[i] -= k; k <<= 1;\n        }\n        if (s[i] > 0) { nw.push_back(w[i] * s[i]); nv.push_back(v[i] * s[i]); }\n    }\n    return knapsack01(nw, nv, C);\n}",
       "thinkingQuestions": [
         {
@@ -982,7 +982,7 @@
         "dp"
       ],
       "summary": "状态在一维线性结构上转移，LIS、最大子段和、爬楼梯等经典模型。",
-      "content": "## 核心思想\n\n线性 DP 指状态定义在**线性序列**（一维或固定顺序）上，状态转移只依赖前面有限个状态，是最基础的 DP 形态。\n\n## 经典模型\n\n1. **最大子段和**：`dp[i] = max(dp[i-1] + a[i], a[i])`\n2. **最长递增子序列 LIS**：`dp[i] = max(dp[j] + 1)`（a[j] < a[i]）\n3. **爬楼梯 / 斐波那契**：`dp[i] = dp[i-1] + dp[i-2]`\n\n```mermaid\ngraph LR\n  A[\"dp[0] 初始化\"] --> B[\"dp[i] 由前面状态转移\"]\n  B --> C[\"遍历到 n\"]\n  C --> D[\"取最优\"]\n```\n\n## 复杂度\n\n- LIS 朴素 $O(n^2)$，贪心 + 二分可优化到 $O(n \\log n)$。",
+      "content": "## 核心思想\n\n线性 DP 指状态定义在**线性序列**（一维或固定顺序）上，状态转移只依赖前面有限个状态，是最基础的 DP 形态。\n\n## 经典模型\n\n1. **最大子段和**：`dp[i] = max(dp[i-1] + a[i], a[i])`\n2. **最长递增子序列 LIS**：`dp[i] = max(dp[j] + 1)`（a[j] < a[i]）\n3. **爬楼梯 / 斐波那契**：`dp[i] = dp[i-1] + dp[i-2]`\n\n```mermaid\ngraph LR\n  A[\"dp[0] 初始化\"] --> B[\"dp[i] 由前面状态转移\"]\n  B --> C[\"遍历到 n\"]\n  C --> D[\"取最优\"]\n```\n\n## 复杂度\n\n- LIS 朴素 $O(n^2)$，贪心 + 二分可优化到 $O(n \\log n)$。\n\n## 经典扩展\n\n1. **双向 LIS**：P1020 导弹拦截 要求\"最长不升子序列 + 最少系统数\"，后者等价于**最长递增子序列长度**（Dilworth 定理），是洛谷黄题经典。\n2. **合唱队形**（P1091）：求\"中间高、两边低\"的最长山形——正反各做一次 LIS 再合并。\n3. **时间轴线性 DP**：P1280 尼克的任务 按时间从后往前扫，任务/空闲分类转移。\n4. **双序列线性 DP**（LCS / 编辑距离）见\"双序列 DP\"章。\n\n## 洛谷经典题\n\n- P1020 导弹拦截（LIS + 贪心二分）\n- P1091 合唱队形（双向 LIS）\n- P1280 尼克的任务（倒推时间轴）\n- P1002 过河卒（棋盘线性）\n\n## 社区经验\n\n- 线性 DP 的**\"最后一步\"分类**是万能起点：当前元素 选/不选、接前面/另起一段、从左/从右来，分类互斥且完备即可转移。\n- LIS 的 $O(n \\log n)$ 做法（tails + 二分）在竞赛里比 $O(n^2)$ 更常被要求，务必能默写。",
       "templateCode": "#include <bits/stdc++.h>\nusing namespace std;\n\n// 最大子段和\nint maxSubArray(vector<int>& nums) {\n    int dp = nums[0], ans = nums[0];\n    for (int i = 1; i < (int)nums.size(); i++) {\n        dp = max(dp + nums[i], nums[i]);\n        ans = max(ans, dp);\n    }\n    return ans;\n}\n\n// 最长递增子序列 LIS（O(n log n) 贪心 + 二分）\nint lengthOfLIS(vector<int>& nums) {\n    vector<int> tails;\n    for (int x : nums) {\n        auto it = lower_bound(tails.begin(), tails.end(), x);\n        if (it == tails.end()) tails.push_back(x);\n        else *it = x;\n    }\n    return (int)tails.size();\n}\n\n// 爬楼梯\nint climbStairs(int n) {\n    if (n <= 2) return n;\n    int a = 1, b = 2;\n    for (int i = 3; i <= n; i++) { int c = a + b; a = b; b = c; }\n    return b;\n}",
       "thinkingQuestions": [
         {
@@ -1017,7 +1017,7 @@
         "dp"
       ],
       "summary": "状态定义在区间 [l,r] 上，枚举分割点转移，石子合并等经典，常 O(n³)。",
-      "content": "## 核心思想\n\n区间 DP 把状态定义在**区间 [l, r]** 上，通过枚举**分割点 k**，把大区间拆成两个子区间合并转移。\n\n## 标准模板\n\n```mermaid\ngraph TD\n  A[\"枚举区间长度 len\"] --> B[\"枚举左端点 l\"]\n  B --> C[\"枚举分割点 k\"]\n  C --> D[\"dp[l][r] = merge(dp[l][k], dp[k+1][r])\"]\n```\n\n## 经典问题\n\n- 石子合并（相邻合并，求最小 / 最大代价）。\n- 回文子序列、矩阵链乘。\n\n## 复杂度\n\n- 通常 $O(n^3)$（枚举长度 × 左端点 × 分割点）。",
+      "content": "## 核心思想\n\n区间 DP 把状态定义在**区间 [l, r]** 上，通过枚举**分割点 k**，把大区间拆成两个子区间合并转移。\n\n## 标准模板\n\n```mermaid\ngraph TD\n  A[\"枚举区间长度 len\"] --> B[\"枚举左端点 l\"]\n  B --> C[\"枚举分割点 k\"]\n  C --> D[\"dp[l][r] = merge(dp[l][k], dp[k+1][r])\"]\n```\n\n## 经典问题\n\n- 石子合并（相邻合并，求最小 / 最大代价）。\n- 回文子序列、矩阵链乘。\n\n## 复杂度\n\n- 通常 $O(n^3)$（枚举长度 × 左端点 × 分割点）。\n\n## 环形处理：断环成链\n\n石子围成一圈（P1880 石子合并 环形版、P1063 能量项链）时，把数组复制一份接在后面（长度 2n），只枚举长度为 n 的区间，答案取 `min(dp[l][l+n-1])`。社区经验：\"环形区间 DP = 断环成链，这是标配操作\"。\n\n## 经典扩展\n\n1. **回文区间**：P4170 涂色（区间染色）——状态 `dp[l][r]` 按两端是否同色分类。\n2. **合并类**：P3146 248（相邻相同合并）、P4342 Polygon（断环成链 + 最大最小双值）。\n3. **括号序列区间 DP**：CF149D Coloring Brackets（配对转移）。\n\n## 洛谷经典题\n\n- P1880 石子合并（环形，NOI1995 经典）\n- P1063 能量项链（环形区间 DP）\n- P4170 涂色（区间染色）\n- P3146 248（合并游戏）\n\n## 社区经验\n\n1. 区间 DP 的**遍历顺序是长度递增**（先小区间后大区间），写成\"左端点 → 右端点\"的朴素二重循环会用到未算的区间，必错。\n2. **四边形不等式优化**可以让部分区间 DP 从 $O(n^3)$ 降到 $O(n^2)$（见\"DP 优化\"章），当 w(l,r) 满足单调性时可以尝试。",
       "templateCode": "#include <bits/stdc++.h>\nusing namespace std;\n\n// 石子合并：n 堆石子，每次合并相邻两堆，求最小总代价\nint stoneMerge(vector<int>& a) {\n    int n = a.size();\n    vector<int> pre(n + 1, 0);\n    for (int i = 0; i < n; i++) pre[i + 1] = pre[i] + a[i];\n    const int INF = 0x3f3f3f3f;\n    vector<vector<int>> dp(n, vector<int>(n, INF));\n    for (int i = 0; i < n; i++) dp[i][i] = 0;\n    for (int len = 2; len <= n; len++) {\n        for (int l = 0; l + len - 1 < n; l++) {\n            int r = l + len - 1;\n            for (int k = l; k < r; k++) {\n                dp[l][r] = min(dp[l][r],\n                    dp[l][k] + dp[k + 1][r] + pre[r + 1] - pre[l]);\n            }\n        }\n    }\n    return dp[0][n - 1];\n}",
       "thinkingQuestions": [
         {
@@ -1052,7 +1052,7 @@
         "binary-tree"
       ],
       "summary": "在树上做 DP，后序遍历自底向上，选/不选节点、树的直径、最大独立集。",
-      "content": "## 核心思想\n\n树形 DP 在**树上**做动态规划：利用树的后序遍历**自底向上**，先算子树再汇总到父节点。\n\n## 经典状态设计\n\n1. **选 / 不选**：`dp[u][0]`（不选 u）、`dp[u][1]`（选 u）。\n2. 树的直径、最大独立集、最小点覆盖。\n\n```mermaid\ngraph TD\n  A[\"DFS 到叶子\"] --> B[\"计算叶子 dp\"]\n  B --> C[\"回溯合并到父节点\"]\n  C --> D[\"直到根\"]\n```\n\n## 复杂度\n\n- 每个节点访问一次，$O(n)$。",
+      "content": "## 核心思想\n\n树形 DP 在**树上**做动态规划：利用树的后序遍历**自底向上**，先算子树再汇总到父节点。\n\n## 经典状态设计\n\n1. **选 / 不选**：`dp[u][0]`（不选 u）、`dp[u][1]`（选 u）。\n2. 树的直径、最大独立集、最小点覆盖。\n\n```mermaid\ngraph TD\n  A[\"DFS 到叶子\"] --> B[\"计算叶子 dp\"]\n  B --> C[\"回溯合并到父节点\"]\n  C --> D[\"直到根\"]\n```\n\n## 复杂度\n\n- 每个节点访问一次，$O(n)$。\n\n## 经典模型补充\n\n1. **树的直径（DP 求法）**：对每个点维护\"向下最长路径\"与\"向下次长路径\"，两者之和的最大值即直径；也可两次 DFS。\n2. **最大子树和**（P1122）：`dp[u] = val[u] + Σmax(dp[v], 0)`，砍掉贡献为负的子树。\n3. **加分二叉树**（P1040，NOIP 提高经典）：中序序列 + 区间 DP 与树形 DP 结合。\n4. **树上背包 / 换根 DP / 基环树**见\"树上进阶 DP\"章。\n\n## 洛谷经典题\n\n- P1352 没有上司的舞会（最大权独立集模板）\n- P2016 战略游戏（最小点覆盖模板）\n- P1122 最大子树和\n- P1040 加分二叉树（NOIP 经典）\n\n## 社区经验\n\n1. 树形 DP 的状态**以\"u 子树\"为单位**定义（如 dp[u][0/1]），自底向上合并——\"子树\"这两个字是树形 DP 的通用语义。\n2. 选/不选、覆盖/不覆盖、砍/不砍……**\"对每个节点两种状态\"的模板**覆盖了绝大多数入门树形 DP。\n3. 树上信息用**后序遍历**收集，需要\"父传子\"时用换根（二次扫描）。",
       "templateCode": "#include <bits/stdc++.h>\nusing namespace std;\n\nstruct TreeNode {\n    int val;\n    TreeNode *left, *right;\n    TreeNode(int x = 0, TreeNode* l = nullptr, TreeNode* r = nullptr)\n        : val(x), left(l), right(r) {}\n};\n\n// 返回 {不选该节点的最大值, 选该节点的最大值}\npair<int,int> dfs(TreeNode* root) {\n    if (!root) return {0, 0};\n    auto l = dfs(root->left);\n    auto r = dfs(root->right);\n    int notPick = max(l.first, l.second) + max(r.first, r.second);\n    int pick = root->val + l.first + r.first;\n    return {notPick, pick};\n}\n\n// 树的最大独立集（相邻节点不能同时选）\nint rob(TreeNode* root) {\n    auto res = dfs(root);\n    return max(res.first, res.second);\n}",
       "thinkingQuestions": [
         {
@@ -1086,7 +1086,7 @@
         "dp"
       ],
       "summary": "按位枚举 + 记忆化搜索，统计区间内满足数位条件的数的个数。",
-      "content": "## 核心思想\n\n数位 DP 用于统计**某区间内满足数位条件的数的个数**（如不含 4、数位和、某数字出现次数）。做法：按位枚举 + 记忆化，避免逐个枚举每个数。\n\n```mermaid\ngraph TD\n  A[\"从高位到低位枚举\"] --> B[\"当前位选 0~上限\"]\n  B --> C[\"记忆化：相同 pos + 状态直接复用\"]\n  C --> D[\"到末位返回是否合法\"]\n```\n\n## 关键状态\n\n1. **pos**：当前处理到第几位。\n2. **limit**：是否受上界限制（前几位都顶格）。\n3. **状态位**：如是否已出现某数字、前导零等。\n\n## 复杂度\n\n- 状态数 ≈ 位数 × 状态维度，远小于直接枚举每个数。",
+      "content": "## 核心思想\n\n数位 DP 用于统计**某区间内满足数位条件的数的个数**（如不含 4、数位和、某数字出现次数）。做法：按位枚举 + 记忆化，避免逐个枚举每个数。\n\n```mermaid\ngraph TD\n  A[\"从高位到低位枚举\"] --> B[\"当前位选 0~上限\"]\n  B --> C[\"记忆化：相同 pos + 状态直接复用\"]\n  C --> D[\"到末位返回是否合法\"]\n```\n\n## 关键状态\n\n1. **pos**：当前处理到第几位。\n2. **limit**：是否受上界限制（前几位都顶格）。\n3. **状态位**：如是否已出现某数字、前导零等。\n\n## 复杂度\n\n- 状态数 ≈ 位数 × 状态维度，远小于直接枚举每个数。\n\n## 经典模型补充\n\n1. **数字出现次数**（P2602 数字计数）：统计 1..n 中每个数字 0-9 出现次数，`dp[pos][sum]` 或按位贡献拆分。\n2. **前导零处理**：无前导零的数（如 windy 数）需要 `lead` 状态标记是否还在前导零阶段——前导零不算 0 且影响\"相邻差\"类约束。\n3. **多约束叠加**：P3413 萌数（回文相关）、P4999 烦人的数学作业（数位和），一个状态装不下就加维度。\n4. **高级 trick**：拆前/后缀（P2481 代码拍卖会）——按位贡献拆分成若干独立部分分别数位 DP。\n\n## 洛谷经典题\n\n- P2657 windy 数（模板）\n- P2602 数字计数（出现次数）\n- P3413 萌数\n- P4999 烦人的数学作业\n\n## 社区经验\n\n1. **limit 为 true 的状态不记忆化**（每位数不同，只有不顶格才可复用）——这是数位 DP 正确性的关键。\n2. 记忆化的维度 = pos + 所有\"影响后续决策\"的自定义状态（limit、lead、前缀状态），**少一维就错**。\n3. 区间 [l, r] 统一用 `solve(r) - solve(l-1)`，别直接对 l 做。",
       "templateCode": "#include <bits/stdc++.h>\nusing namespace std;\n\nint memo[20];\n\n// pos: 当前位；limit: 是否顶格（受上界限制）\nint dfs(int pos, bool limit, const string& s) {\n    if (pos == (int)s.size()) return 1;\n    if (!limit && memo[pos] != -1) return memo[pos];\n    int up = limit ? s[pos] - '0' : 9;\n    int res = 0;\n    for (int d = 0; d <= up; d++) {\n        if (d == 4) continue; // 跳过含 4\n        res += dfs(pos + 1, limit && (d == up), s);\n    }\n    if (!limit) memo[pos] = res;\n    return res;\n}\n\n// 统计 [1, n] 中不含数字 4 的数字个数\nint countWithout4(int n) {\n    memset(memo, -1, sizeof(memo));\n    string s = to_string(n);\n    return dfs(0, true, s);\n}",
       "thinkingQuestions": [
         {
@@ -1750,7 +1750,7 @@
         "binary-search"
       ],
       "summary": "用二进制位表示集合状态，DP 转移处理排列/覆盖/匹配类问题，n ≤ 20 是信号。",
-      "content": "## 核心思想\n\n当 n 很小（通常 $n \\leq 20$），可以用一个整数的二进制位表示\"哪些元素被选中/访问过\"——这就是**状态压缩**。$2^n$ 个状态可接受（$2^{20} \\approx 10^6$）。\n\n```mermaid\ngraph LR\n  A[\"状态 mask = 10110<br/>第 1,2,4 位已选\"] --> B[\"枚举下一个可选元素 j\"]\n  B --> C[\"新状态 mask | (1<<j)\"]\n  C --> D[\"dp[新状态] = min/max(...)\"]\n```\n\n## 一、经典模型：旅行商问题（TSP）\n\n给定 n 个城市和距离矩阵，求从 0 出发经过所有城市恰好一次再回到 0 的最短路径。\n\n**状态**：`dp[mask][i]` = 已访问集合为 mask，当前在城市 i 的最短距离。\n\n**转移**：\n$$dp[mask][i] = \\min_{j \\in mask, j \\neq i} \\{ dp[mask \\setminus \\{i\\}][j] + dist[j][i] \\}$$\n\n**初始化**：`dp[1<<0][0] = 0`，其余 INF。\n\n**答案**：$\\min_i \\{ dp[(1<<n)-1][i] + dist[i][0] \\}$。\n\n```cpp\nint n;\nint dist[20][20];\nint dp[1<<20][20];  // 注意内存：2^20 * 20 * 4B ≈ 80MB\n\nint tsp() {\n    int FULL = (1 << n) - 1;\n    memset(dp, 0x3f, sizeof dp);\n    dp[1][0] = 0;\n    for (int mask = 1; mask <= FULL; mask++) {\n        for (int i = 0; i < n; i++) {\n            if (!(mask & (1 << i))) continue;\n            if (dp[mask][i] == 0x3f3f3f3f) continue;\n            for (int j = 0; j < n; j++) {\n                if (mask & (1 << j)) continue;\n                int nm = mask | (1 << j);\n                dp[nm][j] = min(dp[nm][j], dp[mask][i] + dist[i][j]);\n            }\n        }\n    }\n    int ans = INT_MAX;\n    for (int i = 1; i < n; i++)\n        ans = min(ans, dp[FULL][i] + dist[i][0]);\n    return ans;\n}\n```\n\n复杂度 $O(n^2 2^n)$，n=20 时约 $4 \\times 10^8$，需常数优化。\n\n## 二、经典模型：哈密顿路径计数\n\n`dp[mask][i]` = 已访问 mask、当前在 i 的路径数。转移类似 TSP，把 min 换成 sum。\n\n## 三、经典模型：集合覆盖 / 工作分配\n\n**工作分配**：n 个人 n 件工作，`cost[i][j]` 表示第 i 个人做第 j 件工作的代价，求最小总代价。\n\n`dp[mask]` = 已分配工作集合为 mask（前 popcount(mask) 个人已分配）的最小代价。\n\n$$dp[mask | (1<<j)] = \\min(dp[mask] + cost[popcount(mask)][j])$$\n\n## 四、位运算常用技巧\n\n```cpp\n__builtin_popcount(mask);   // 1 的个数\n__builtin_ctz(mask);         // 末尾 0 的个数（最低位 1 的位置）\nmask & -mask;                // 取最低位的 1\nmask & (mask - 1);           // 去掉最低位的 1\nfor (int sub = mask; sub; sub = (sub-1) & mask) { ... }  // 枚举 mask 的所有非空子集\n```\n\n## 五、状态压缩的常见信号\n\n1. 题目中 n ≤ 20（甚至 ≤ 15）。\n2. 涉及\"排列\"、\"经过所有点\"、\"覆盖所有元素\"。\n3. 每个元素只有\"选/不选\"两种状态。\n4. 棋盘类问题（每行状态用二进制表示，如状压 DP 棋盘覆盖）。\n\n## 六、棋盘状压 DP（轮廓线 DP 入门）\n\nn×m 棋盘放棋子，要求相邻不同色/不攻击。当 m 很小时（m ≤ 10），用二进制表示当前行的放置状态，逐行转移。\n\n`dp[i][mask]` = 前 i 行放好，第 i 行状态为 mask 的方案数。转移时检查 mask 与上一行状态是否冲突。\n\n## 复杂度\n\n- TSP / 排列类：$O(n^2 2^n)$\n- 集合覆盖 / 工作分配：$O(n 2^n)$\n- 棋盘状压：$O(n · 3^m)$ 或 $O(n · 2^m · 2^m)$\n\n## 常见应用\n\n1. 蓝桥杯：最短路径（TSP 变种）、工作分配。\n2. CCPC：哈密顿路径计数、集合覆盖、棋盘状压。\n3. 与图论结合：经过指定点集的最短路（Floyd + 状压）。",
+      "content": "## 核心思想\n\n当 n 很小（通常 $n \\leq 20$），可以用一个整数的二进制位表示\"哪些元素被选中/访问过\"——这就是**状态压缩**。$2^n$ 个状态可接受（$2^{20} \\approx 10^6$）。\n\n```mermaid\ngraph LR\n  A[\"状态 mask = 10110<br/>第 1,2,4 位已选\"] --> B[\"枚举下一个可选元素 j\"]\n  B --> C[\"新状态 mask | (1<<j)\"]\n  C --> D[\"dp[新状态] = min/max(...)\"]\n```\n\n## 一、经典模型：旅行商问题（TSP）\n\n给定 n 个城市和距离矩阵，求从 0 出发经过所有城市恰好一次再回到 0 的最短路径。\n\n**状态**：`dp[mask][i]` = 已访问集合为 mask，当前在城市 i 的最短距离。\n\n**转移**：\n$$dp[mask][i] = \\min_{j \\in mask, j \\neq i} \\{ dp[mask \\setminus \\{i\\}][j] + dist[j][i] \\}$$\n\n**初始化**：`dp[1<<0][0] = 0`，其余 INF。\n\n**答案**：$\\min_i \\{ dp[(1<<n)-1][i] + dist[i][0] \\}$。\n\n```cpp\nint n;\nint dist[20][20];\nint dp[1<<20][20];  // 注意内存：2^20 * 20 * 4B ≈ 80MB\n\nint tsp() {\n    int FULL = (1 << n) - 1;\n    memset(dp, 0x3f, sizeof dp);\n    dp[1][0] = 0;\n    for (int mask = 1; mask <= FULL; mask++) {\n        for (int i = 0; i < n; i++) {\n            if (!(mask & (1 << i))) continue;\n            if (dp[mask][i] == 0x3f3f3f3f) continue;\n            for (int j = 0; j < n; j++) {\n                if (mask & (1 << j)) continue;\n                int nm = mask | (1 << j);\n                dp[nm][j] = min(dp[nm][j], dp[mask][i] + dist[i][j]);\n            }\n        }\n    }\n    int ans = INT_MAX;\n    for (int i = 1; i < n; i++)\n        ans = min(ans, dp[FULL][i] + dist[i][0]);\n    return ans;\n}\n```\n\n复杂度 $O(n^2 2^n)$，n=20 时约 $4 \\times 10^8$，需常数优化。\n\n## 二、经典模型：哈密顿路径计数\n\n`dp[mask][i]` = 已访问 mask、当前在 i 的路径数。转移类似 TSP，把 min 换成 sum。\n\n## 三、经典模型：集合覆盖 / 工作分配\n\n**工作分配**：n 个人 n 件工作，`cost[i][j]` 表示第 i 个人做第 j 件工作的代价，求最小总代价。\n\n`dp[mask]` = 已分配工作集合为 mask（前 popcount(mask) 个人已分配）的最小代价。\n\n$$dp[mask | (1<<j)] = \\min(dp[mask] + cost[popcount(mask)][j])$$\n\n## 四、位运算常用技巧\n\n```cpp\n__builtin_popcount(mask);   // 1 的个数\n__builtin_ctz(mask);         // 末尾 0 的个数（最低位 1 的位置）\nmask & -mask;                // 取最低位的 1\nmask & (mask - 1);           // 去掉最低位的 1\nfor (int sub = mask; sub; sub = (sub-1) & mask) { ... }  // 枚举 mask 的所有非空子集\n```\n\n## 五、状态压缩的常见信号\n\n1. 题目中 n ≤ 20（甚至 ≤ 15）。\n2. 涉及\"排列\"、\"经过所有点\"、\"覆盖所有元素\"。\n3. 每个元素只有\"选/不选\"两种状态。\n4. 棋盘类问题（每行状态用二进制表示，如状压 DP 棋盘覆盖）。\n\n## 六、棋盘状压 DP（轮廓线 DP 入门）\n\nn×m 棋盘放棋子，要求相邻不同色/不攻击。当 m 很小时（m ≤ 10），用二进制表示当前行的放置状态，逐行转移。\n\n`dp[i][mask]` = 前 i 行放好，第 i 行状态为 mask 的方案数。转移时检查 mask 与上一行状态是否冲突。\n\n## 复杂度\n\n- TSP / 排列类：$O(n^2 2^n)$\n- 集合覆盖 / 工作分配：$O(n 2^n)$\n- 棋盘状压：$O(n · 3^m)$ 或 $O(n · 2^m · 2^m)$\n\n## 常见应用\n\n1. 蓝桥杯：最短路径（TSP 变种）、工作分配。\n2. CCPC：哈密顿路径计数、集合覆盖、棋盘状压。\n3. 与图论结合：经过指定点集的最短路（Floyd + 状压）。\n\n## SOS DP（子集和 DP）\n\n状态 `dp[mask]` = 集合 mask 的所有**子集**的某种和。朴素枚举子集 $O(3^n)$，SOS 逐位递推降到 $O(n2^n)$：\n\n```cpp\n// dp[mask] = sum of f[sub] for all sub ⊆ mask（快速子集和）\nfor (int i = 0; i < n; i++)\n    for (int mask = 0; mask < (1<<n); mask++)\n        if (mask >> i & 1) dp[mask] += dp[mask ^ (1<<i)];\n```\n\n- 用于\"覆盖/至少一个/子集包含\"类计数与容斥（P6442 KOŠARE、CF449D）。\n- 社区经验：\"SOS dp 把子集求和的复杂度从 Θ(3n) 降到 Θ(2nn)\"，是省选/ICPC 常用工具。\n\n## 洛谷经典题\n\n- P1433 吃奶酪（TSP 变体）\n- P1879 玉米田（棋盘状压入门）\n- P1896 互不侵犯（棋盘状压 + 行间冲突）\n- P2704 炮兵阵地（行间三行约束，经典）\n- P3052 摩天大楼（子集枚举）\n- P3959 宝藏（按层转移）\n\n## 社区经验\n\n1. **n ≤ 20 是状压的黄金信号**（2^20 ≈ 10^6），n ≤ 15 更稳，n > 22 谨慎。\n2. 棋盘类先预处理**每行的合法状态**（去掉自相冲突），再处理行间约束，能大幅剪枝。\n3. 状态稀疏时用 unordered_map 代替数组，时间空间双赢。",
       "templateCode": "#include <bits/stdc++.h>\nusing namespace std;\n\n// TSP 模板：n 个城市，从 0 出发经过所有城市回到 0 的最短路\nstruct TSP {\n    int n;\n    vector<vector<int>> dist;\n    vector<vector<int>> dp;\n    TSP(int n, vector<vector<int>> d) : n(n), dist(d), dp(1<<n, vector<int>(n, 1e9)) {}\n    \n    int solve() {\n        int FULL = (1 << n) - 1;\n        dp[1][0] = 0;\n        for (int mask = 1; mask <= FULL; mask++) {\n            for (int i = 0; i < n; i++) {\n                if (!(mask & (1 << i)) || dp[mask][i] == 1e9) continue;\n                for (int j = 0; j < n; j++) {\n                    if (mask & (1 << j)) continue;\n                    int nm = mask | (1 << j);\n                    dp[nm][j] = min(dp[nm][j], dp[mask][i] + dist[i][j]);\n                }\n            }\n        }\n        int ans = 1e9;\n        for (int i = 1; i < n; i++)\n            ans = min(ans, dp[FULL][i] + dist[i][0]);\n        return ans;\n    }\n};\n\n// 工作分配：n 人 n 工作，最小代价\nint assignWork(vector<vector<int>>& cost) {\n    int n = cost.size();\n    vector<int> dp(1 << n, 1e9);\n    dp[0] = 0;\n    for (int mask = 0; mask < (1<<n); mask++) {\n        int i = __builtin_popcount(mask);  // 前 i 个人已分配\n        for (int j = 0; j < n; j++) {\n            if (mask & (1 << j)) continue;\n            dp[mask | (1<<j)] = min(dp[mask | (1<<j)], dp[mask] + cost[i][j]);\n        }\n    }\n    return dp[(1<<n) - 1];\n}\n\nint main() {\n    // 示例：3 城市 TSP\n    vector<vector<int>> d = {{0,1,2},{1,0,3},{2,3,0}};\n    TSP tsp(3, d);\n    cout << \"TSP = \" << tsp.solve() << endl;  // 0->1->2->0 = 1+3+2=6\n    \n    vector<vector<int>> cost = {{1,2},{3,4}};\n    cout << \"assign = \" << assignWork(cost) << endl;  // 人0做工作0(1)+人1做工作1(4)=5\n    return 0;\n}",
       "thinkingQuestions": [
         {
@@ -1785,7 +1785,7 @@
         "combinatorics"
       ],
       "summary": "用 DP 计算概率/期望，关键是定义状态、列方程、注意\"有后效性\"时用高斯消元或倒推。",
-      "content": "## 核心思想\n\n概率 DP：状态表示\"某事件发生的概率\"，转移时乘概率相加。\n期望 DP：状态表示\"从当前到结束的期望步数/代价\"，转移时 $E = \\sum p_i · (cost_i + E_{next})$。\n\n**期望的线性性**：$E[X+Y] = E[X] + E[Y]$，无论 X,Y 是否独立——这是期望 DP 最常用的拆分解法。\n\n## 一、概率 DP 基础\n\n**例**：抛硬币，连续出现 2 次正面的期望次数。\n\n设 $E_i$ = 当前已有连续 i 次正面，到目标（2 次）的期望次数。\n- $E_2 = 0$\n- $E_1 = 1 + 0.5·E_0 + 0.5·E_2$（抛一次：正面到 2，反面到 0）\n- $E_0 = 1 + 0.5·E_1 + 0.5·E_0$\n\n解得 $E_0 = 6$。\n\n## 二、期望 DP 的转移方程\n\n一般形式：\n$$E_u = \\sum_{v} p_{u\\to v} · (cost_{u\\to v} + E_v)$$\n\n整理为：\n$$E_u - \\sum p_{u\\to v} E_v = \\sum p_{u\\to v} cost_{u\\to v}$$\n\n**无后效性**（DAG）：按拓扑序倒推即可。\n**有后效性**（图中有环）：转化为线性方程组，用**高斯消元**求解。\n\n## 三、经典模型：随机游走期望\n\n在图上从起点随机游走（等概率走相邻边），求到达终点的期望步数。\n\n每个点列方程：$E_u = 1 + \\frac{1}{deg(u)} \\sum_{v\\in adj(u)} E_v$（终点 $E_t = 0$）。\n\nn 个点 n 个方程，高斯消元 $O(n^3)$。\n\n```cpp\n// 有后效性的期望 DP → 高斯消元\n// 对每个点 u：E[u] = 1 + sum(E[v]/deg[u])\n// 整理：E[u] - sum(E[v]/deg[u]) = 1\n// 终点 E[t] = 0\n```\n\n## 四、经典模型：扑克牌/抽球期望\n\n**例**：袋中有 a 个红球 b 个蓝球，每次抽一个不放回，求抽到第一个红球的期望次数。\n\n设 $E(i,j)$ = 剩 i 红 j 蓝时，到抽到红球的期望次数。\n- $E(0,j) = 0$（没红球了）\n- $E(i,j) = 1 + \\frac{j}{i+j} E(i, j-1)$（抽到红球结束，抽到蓝球继续）\n\n按 i+j 从小到大递推。\n\n## 五、经典模型：DAG 上的期望\n\nDAG 上无环，按拓扑序倒推：\n$$dp[u] = \\sum_{v} p_{u\\to v} · (w_{u\\to v} + dp[v])$$\n\n从终点往起点算。\n\n## 六、概率 DP 的常见技巧\n\n1. **线性性拆期望**：把复杂期望拆成多个简单期望之和。\n2. **倒推**：从终止状态往初始状态推（期望 DP 通常倒推更自然）。\n3. **对称性**：利用对称性减少状态数。\n4. **min-max 容斥**：$E[\\max(S)] = \\sum_{T\\subseteq S} (-1)^{|T|+1} E[\\min(T)]$，用于\"集齐所有\"类问题。\n\n## 七、min-max 容斥（期望版）\n\n求\"集齐 n 种卡片的期望次数\"，每次抽中第 i 种的概率 $p_i$。\n\n$$E[\\text{集齐}] = \\sum_{T\\subseteq \\{1..n\\}, T\\neq\\emptyset} (-1)^{|T|+1} \\frac{1}{\\sum_{i\\in T} p_i}$$\n\n原理：$\\max(S) = \\sum_{T\\subseteq S} (-1)^{|T|+1} \\min(T)$，对期望也成立。\n\n## 复杂度\n\n- DAG 期望 DP：$O(V+E)$\n- 有后效性（高斯消元）：$O(n^3)$\n- min-max 容斥：$O(2^n)$\n\n## 常见应用\n\n1. 蓝桥杯：抛硬币/抽球期望、随机游走。\n2. CCPC：图上随机游走、概率 DP 计数、min-max 容斥。\n3. 与状压结合：集合上的期望（如集齐卡牌）。\n\n## 注意事项\n\n1. 期望 DP 的状态定义要明确\"从当前到结束\"还是\"从开始到当前\"。\n2. 有环时不能直接递推，必须高斯消元或找到特殊结构（如树、DAG）。\n3. 概率 DP 注意精度：用 double，最终答案误差通常允许 1e-6。",
+      "content": "## 核心思想\n\n概率 DP：状态表示\"某事件发生的概率\"，转移时乘概率相加。\n期望 DP：状态表示\"从当前到结束的期望步数/代价\"，转移时 $E = \\sum p_i · (cost_i + E_{next})$。\n\n**期望的线性性**：$E[X+Y] = E[X] + E[Y]$，无论 X,Y 是否独立——这是期望 DP 最常用的拆分解法。\n\n## 一、概率 DP 基础\n\n**例**：抛硬币，连续出现 2 次正面的期望次数。\n\n设 $E_i$ = 当前已有连续 i 次正面，到目标（2 次）的期望次数。\n- $E_2 = 0$\n- $E_1 = 1 + 0.5·E_0 + 0.5·E_2$（抛一次：正面到 2，反面到 0）\n- $E_0 = 1 + 0.5·E_1 + 0.5·E_0$\n\n解得 $E_0 = 6$。\n\n## 二、期望 DP 的转移方程\n\n一般形式：\n$$E_u = \\sum_{v} p_{u\\to v} · (cost_{u\\to v} + E_v)$$\n\n整理为：\n$$E_u - \\sum p_{u\\to v} E_v = \\sum p_{u\\to v} cost_{u\\to v}$$\n\n**无后效性**（DAG）：按拓扑序倒推即可。\n**有后效性**（图中有环）：转化为线性方程组，用**高斯消元**求解。\n\n## 三、经典模型：随机游走期望\n\n在图上从起点随机游走（等概率走相邻边），求到达终点的期望步数。\n\n每个点列方程：$E_u = 1 + \\frac{1}{deg(u)} \\sum_{v\\in adj(u)} E_v$（终点 $E_t = 0$）。\n\nn 个点 n 个方程，高斯消元 $O(n^3)$。\n\n```cpp\n// 有后效性的期望 DP → 高斯消元\n// 对每个点 u：E[u] = 1 + sum(E[v]/deg[u])\n// 整理：E[u] - sum(E[v]/deg[u]) = 1\n// 终点 E[t] = 0\n```\n\n## 四、经典模型：扑克牌/抽球期望\n\n**例**：袋中有 a 个红球 b 个蓝球，每次抽一个不放回，求抽到第一个红球的期望次数。\n\n设 $E(i,j)$ = 剩 i 红 j 蓝时，到抽到红球的期望次数。\n- $E(0,j) = 0$（没红球了）\n- $E(i,j) = 1 + \\frac{j}{i+j} E(i, j-1)$（抽到红球结束，抽到蓝球继续）\n\n按 i+j 从小到大递推。\n\n## 五、经典模型：DAG 上的期望\n\nDAG 上无环，按拓扑序倒推：\n$$dp[u] = \\sum_{v} p_{u\\to v} · (w_{u\\to v} + dp[v])$$\n\n从终点往起点算。\n\n## 六、概率 DP 的常见技巧\n\n1. **线性性拆期望**：把复杂期望拆成多个简单期望之和。\n2. **倒推**：从终止状态往初始状态推（期望 DP 通常倒推更自然）。\n3. **对称性**：利用对称性减少状态数。\n4. **min-max 容斥**：$E[\\max(S)] = \\sum_{T\\subseteq S} (-1)^{|T|+1} E[\\min(T)]$，用于\"集齐所有\"类问题。\n\n## 七、min-max 容斥（期望版）\n\n求\"集齐 n 种卡片的期望次数\"，每次抽中第 i 种的概率 $p_i$。\n\n$$E[\\text{集齐}] = \\sum_{T\\subseteq \\{1..n\\}, T\\neq\\emptyset} (-1)^{|T|+1} \\frac{1}{\\sum_{i\\in T} p_i}$$\n\n原理：$\\max(S) = \\sum_{T\\subseteq S} (-1)^{|T|+1} \\min(T)$，对期望也成立。\n\n## 复杂度\n\n- DAG 期望 DP：$O(V+E)$\n- 有后效性（高斯消元）：$O(n^3)$\n- min-max 容斥：$O(2^n)$\n\n## 常见应用\n\n1. 蓝桥杯：抛硬币/抽球期望、随机游走。\n2. CCPC：图上随机游走、概率 DP 计数、min-max 容斥。\n3. 与状压结合：集合上的期望（如集齐卡牌）。\n\n## 注意事项\n\n1. 期望 DP 的状态定义要明确\"从当前到结束\"还是\"从开始到当前\"。\n2. 有环时不能直接递推，必须高斯消元或找到特殊结构（如树、DAG）。\n3. 概率 DP 注意精度：用 double，最终答案误差通常允许 1e-6。\n\n## 洛谷经典题\n\n- P4316 绿豆蛙的归宿（DAG 期望，拓扑倒推，入门首选）\n- P1850 换教室（期望 DP + Floyd 预处理，NOIP 经典）\n- P3802 小魔女帕琪（概率组合）\n- P3232 游走（图上随机游走 + 高斯消元，进阶）\n\n## 社区经验\n\n1. **期望题先判断\"有没有后效性\"**：DAG/树直接递推，有环先想\"能否按期望线性性拆开\"，实在有环再高斯消元（O(n³)，n ≤ 500 才敢用）。\n2. **\"一直抽不到\"的无限过程**：设 E = 1 + p·E 解方程（几何分布），不要写死循环。\n3. OSU!/combo 类（P1365、P1654）的平方/立方期望要用**增量展开**：E[(x+1)²] = E[x²] + 2E[x] + 1，需要同时维护 x 与 x² 的期望。\n4. 期望 DP 输出要求保留小数时，用 `printf(\"%.2f\")` 或 `fixed << setprecision`。",
       "templateCode": "#include <bits/stdc++.h>\nusing namespace std;\n\n// 1. 抛硬币连续 k 次正面的期望次数（递推）\ndouble coinExpect(int k) {\n    vector<double> E(k + 1, 0);\n    // E[i] = 已有 i 次连续正面，到 k 次的期望次数\n    // E[i] = 1 + 0.5*E[i+1] + 0.5*E[0]  (i < k)\n    // 这是有后效性的（E[i] 依赖 E[0]），用代入法解：\n    // 令 E[i] = a[i]*E[0] + b[i]，递推 a,b\n    vector<double> a(k+1), b(k+1);\n    a[k] = 0; b[k] = 0;\n    for (int i = k-1; i >= 0; i--) {\n        a[i] = 0.5 * a[i+1] + 0.5;\n        b[i] = 1 + 0.5 * b[i+1];\n    }\n    // E[0] = a[0]*E[0] + b[0] => E[0] = b[0]/(1-a[0])\n    return b[0] / (1 - a[0]);\n}\n\n// 2. DAG 上的期望：从起点到终点的期望路径长度\n// 假设图是 DAG，dp[u] = 从 u 到终点的期望距离\ndouble dagExpect(int n, vector<vector<pair<int,double>>>& adj, int s, int t) {\n    vector<double> dp(n, 0);\n    vector<int> deg(n, 0);\n    for (int u = 0; u < n; u++) deg[u] = adj[u].size();\n    // 按拓扑序倒推（此处简化：假设节点已按拓扑序编号，大的在前）\n    dp[t] = 0;\n    for (int u = n-1; u >= 0; u--) {\n        if (u == t || deg[u] == 0) continue;\n        double sum = 0;\n        for (auto& [v, w] : adj[u]) sum += w + dp[v];\n        dp[u] = sum / deg[u];\n    }\n    return dp[s];\n}\n\n// 3. 高斯消元（用于有后效性的期望 DP）\nvoid gauss(vector<vector<double>>& a, int n) {\n    for (int i = 0; i < n; i++) {\n        int pivot = i;\n        for (int j = i+1; j < n; j++)\n            if (fabs(a[j][i]) > fabs(a[pivot][i])) pivot = j;\n        swap(a[i], a[pivot]);\n        for (int j = i+1; j <= n; j++) a[i][j] /= a[i][i];\n        a[i][i] = 1;\n        for (int j = 0; j < n; j++) {\n            if (j == i || fabs(a[j][i]) < 1e-9) continue;\n            double f = a[j][i];\n            for (int k = i; k <= n; k++) a[j][k] -= f * a[i][k];\n        }\n    }\n}\n\nint main() {\n    cout << \"连续2次正面期望: \" << coinExpect(2) << endl;  // 6\n    cout << \"连续3次正面期望: \" << coinExpect(3) << endl;  // 14\n    return 0;\n}",
       "thinkingQuestions": [
         {
@@ -2236,7 +2236,7 @@
         "binary-search"
       ],
       "summary": "斜率优化、四边形不等式、单调队列优化——把 O(n^2) DP 降到 O(n log n) 或 O(n)。",
-      "content": "## 核心思想\n\n很多 DP 的转移方程形如 $dp[i] = \\min_{j < i} \\{ dp[j] + w(j,i) \\}$，朴素 $O(n^2)$。当 $w(j,i)$ 满足某些性质时，可以用**斜率优化**、**四边形不等式**或**单调队列**把复杂度降到 $O(n)$ 或 $O(n \\log n)$。\n\n## 一、斜率优化\n\n转移方程形如：\n$$dp[i] = \\min_{j < i} \\{ a[i] \\cdot b[j] + c[i] + dp[j] \\}$$\n\n把含 j 的项整理到左边：\n$$dp[j] = -a[i] \\cdot b[j] + (dp[i] - c[i])$$\n\n这是直线方程 $y = kx + b$ 的形式：\n- $y = dp[j]$\n- $x = b[j]$\n- 斜率 $k = -a[i]$\n- 截距 $b = dp[i] - c[i]$\n\n对每个 i，我们要找截距最小的直线（即 dp[i] 最小），等价于用斜率为 $-a[i]$ 的直线去切所有点 $(b[j], dp[j])$ 的下凸壳。\n\n维护一个**下凸壳**（单调队列），查询时弹出队首不优的点，插入时弹出队尾破坏凸性的点。\n\n```cpp\n// 斜率优化模板（b[j] 单调递增，a[i] 单调递增）\n// dp[i] = min(dp[j] + (a[i]-b[j])^2) 形式\nint dp[N], q[N], head, tail;\n\n// 点 (x[j], y[j]) = (b[j], dp[j] + b[j]^2)\n// 斜率比较：(y2-y1)/(x2-x1) <= 2*a[i] 则弹出队首\ndouble slope(int i, int j) {\n    return (double)(y[j] - y[i]) / (x[j] - x[i]);\n}\n\nfor (int i = 1; i <= n; i++) {\n    // 查询：弹出队首\n    while (head < tail && slope(q[head], q[head+1]) <= 2 * a[i]) head++;\n    int j = q[head];\n    dp[i] = dp[j] + (a[i] - b[j]) * (a[i] - b[j]);\n    // 插入：弹出队尾\n    while (head < tail && slope(q[tail-1], q[tail]) >= slope(q[tail], i)) tail--;\n    q[++tail] = i;\n}\n```\n\n**斜率优化的条件**：\n- 转移方程能整理成 $y = kx + b$ 形式。\n- 若 $x[j]$ 单调：用单调队列 $O(n)$。\n- 若 $x[j]$ 不单调：用平衡树或 CDQ 分治维护凸壳 $O(n \\log n)$。\n- 若斜率 $k$ 单调：队首弹出；否则二分查找 $O(\\log n)$。\n\n## 二、四边形不等式优化（区间 DP）\n\n区间 DP 形如 $dp[l][r] = \\min_{l \\le k < r} \\{ dp[l][k] + dp[k+1][r] \\} + w(l,r)$。\n\n若 $w(l,r)$ 满足：\n1. **区间包含单调性**：$l \\le l' \\le r' \\le r \\Rightarrow w(l',r') \\le w(l,r)$\n2. **四边形不等式**：$l \\le l' \\le r \\le r' \\Rightarrow w(l,r) + w(l',r') \\le w(l,r') + w(l',r)$\n\n则最优决策点 $opt[l][r]$ 满足 $opt[l][r-1] \\le opt[l][r] \\le opt[l+1][r]$，枚举 k 的范围缩小，总复杂度从 $O(n^3)$ 降到 $O(n^2)$。\n\n```cpp\n// 四边形不等式优化区间 DP\nint dp[N][N], opt[N][N];\nfor (int len = 1; len <= n; len++) {\n    for (int l = 1; l + len - 1 <= n; l++) {\n        int r = l + len - 1;\n        if (len == 1) { dp[l][r] = 0; opt[l][r] = l; continue; }\n        dp[l][r] = INF;\n        for (int k = opt[l][r-1]; k <= opt[l+1][r]; k++) {\n            int val = dp[l][k] + dp[k+1][r] + w(l, r);\n            if (val < dp[l][r]) { dp[l][r] = val; opt[l][r] = k; }\n        }\n    }\n}\n```\n\n## 三、单调队列优化\n\n转移方程形如 $dp[i] = \\min_{i-k \\le j < i} \\{ dp[j] \\} + w[i]$（滑动窗口最小值）。\n\n用单调队列维护窗口内 dp[j] 的最小值，$O(n)$。\n\n```cpp\n// 滑动窗口最小值\ndeque<int> dq;\nfor (int i = 1; i <= n; i++) {\n    while (!dq.empty() && dp[dq.back()] >= dp[i]) dq.pop_back();\n    dq.push_back(i);\n    while (dq.front() < i - k) dq.pop_front();  // 窗口大小 k\n    // dp[i] = dp[dq.front()] + w[i]\n}\n```\n\n## 四、常见 DP 优化总结\n\n| 优化方法 | 适用转移形式 | 复杂度 | 关键条件 |\n|---|---|---|---|\n| 单调队列 | 滑动窗口 min/max | $O(n)$ | 决策区间连续 |\n| 斜率优化 | $a[i]b[j]+dp[j]$ | $O(n)$ / $O(n \\log n)$ | 可整理为直线 |\n| 四边形不等式 | 区间 DP | $O(n^2)$ | w 满足四边形不等式 |\n| 决策单调性 | $dp[i]=min(dp[j]+w(j,i))$ | $O(n \\log n)$ | w 满足四边形不等式 |\n| 数据结构优化 | 区间查询转移 | $O(n \\log n)$ | 决策区间可查询 |\n\n## 五、怎么判断用哪种优化？\n\n1. 先写 $O(n^2)$ 暴力，观察转移方程形式。\n2. 若决策区间是滑动窗口 → 单调队列。\n3. 若能整理为 $y=kx+b$ → 斜率优化。\n4. 若是区间 DP 且 w 看起来满足四边形不等式 → 打表验证 opt 单调性。\n5. 都不满足 → 考虑数据结构（线段树/平衡树）或 CDQ 分治。\n\n## 复杂度\n\n- 斜率优化：$O(n)$（x 单调）或 $O(n \\log n)$（x 不单调）\n- 四边形不等式：$O(n^2)$（从 $O(n^3)$ 优化）\n- 单调队列：$O(n)$\n\n## 常见应用\n\n1. CCPC：斜率优化（玩具装箱、任务安排）、四边形不等式（邮局、合并石子）、单调队列。\n2. 蓝桥杯：单调队列优化（简单）、斜率优化入门。\n3. 与数据结构结合：平衡树维护凸壳、CDQ 分治 + 斜率优化。",
+      "content": "## 核心思想\n\n很多 DP 的转移方程形如 $dp[i] = \\min_{j < i} \\{ dp[j] + w(j,i) \\}$，朴素 $O(n^2)$。当 $w(j,i)$ 满足某些性质时，可以用**斜率优化**、**四边形不等式**或**单调队列**把复杂度降到 $O(n)$ 或 $O(n \\log n)$。\n\n## 一、斜率优化\n\n转移方程形如：\n$$dp[i] = \\min_{j < i} \\{ a[i] \\cdot b[j] + c[i] + dp[j] \\}$$\n\n把含 j 的项整理到左边：\n$$dp[j] = -a[i] \\cdot b[j] + (dp[i] - c[i])$$\n\n这是直线方程 $y = kx + b$ 的形式：\n- $y = dp[j]$\n- $x = b[j]$\n- 斜率 $k = -a[i]$\n- 截距 $b = dp[i] - c[i]$\n\n对每个 i，我们要找截距最小的直线（即 dp[i] 最小），等价于用斜率为 $-a[i]$ 的直线去切所有点 $(b[j], dp[j])$ 的下凸壳。\n\n维护一个**下凸壳**（单调队列），查询时弹出队首不优的点，插入时弹出队尾破坏凸性的点。\n\n```cpp\n// 斜率优化模板（b[j] 单调递增，a[i] 单调递增）\n// dp[i] = min(dp[j] + (a[i]-b[j])^2) 形式\nint dp[N], q[N], head, tail;\n\n// 点 (x[j], y[j]) = (b[j], dp[j] + b[j]^2)\n// 斜率比较：(y2-y1)/(x2-x1) <= 2*a[i] 则弹出队首\ndouble slope(int i, int j) {\n    return (double)(y[j] - y[i]) / (x[j] - x[i]);\n}\n\nfor (int i = 1; i <= n; i++) {\n    // 查询：弹出队首\n    while (head < tail && slope(q[head], q[head+1]) <= 2 * a[i]) head++;\n    int j = q[head];\n    dp[i] = dp[j] + (a[i] - b[j]) * (a[i] - b[j]);\n    // 插入：弹出队尾\n    while (head < tail && slope(q[tail-1], q[tail]) >= slope(q[tail], i)) tail--;\n    q[++tail] = i;\n}\n```\n\n**斜率优化的条件**：\n- 转移方程能整理成 $y = kx + b$ 形式。\n- 若 $x[j]$ 单调：用单调队列 $O(n)$。\n- 若 $x[j]$ 不单调：用平衡树或 CDQ 分治维护凸壳 $O(n \\log n)$。\n- 若斜率 $k$ 单调：队首弹出；否则二分查找 $O(\\log n)$。\n\n## 二、四边形不等式优化（区间 DP）\n\n区间 DP 形如 $dp[l][r] = \\min_{l \\le k < r} \\{ dp[l][k] + dp[k+1][r] \\} + w(l,r)$。\n\n若 $w(l,r)$ 满足：\n1. **区间包含单调性**：$l \\le l' \\le r' \\le r \\Rightarrow w(l',r') \\le w(l,r)$\n2. **四边形不等式**：$l \\le l' \\le r \\le r' \\Rightarrow w(l,r) + w(l',r') \\le w(l,r') + w(l',r)$\n\n则最优决策点 $opt[l][r]$ 满足 $opt[l][r-1] \\le opt[l][r] \\le opt[l+1][r]$，枚举 k 的范围缩小，总复杂度从 $O(n^3)$ 降到 $O(n^2)$。\n\n```cpp\n// 四边形不等式优化区间 DP\nint dp[N][N], opt[N][N];\nfor (int len = 1; len <= n; len++) {\n    for (int l = 1; l + len - 1 <= n; l++) {\n        int r = l + len - 1;\n        if (len == 1) { dp[l][r] = 0; opt[l][r] = l; continue; }\n        dp[l][r] = INF;\n        for (int k = opt[l][r-1]; k <= opt[l+1][r]; k++) {\n            int val = dp[l][k] + dp[k+1][r] + w(l, r);\n            if (val < dp[l][r]) { dp[l][r] = val; opt[l][r] = k; }\n        }\n    }\n}\n```\n\n## 三、单调队列优化\n\n转移方程形如 $dp[i] = \\min_{i-k \\le j < i} \\{ dp[j] \\} + w[i]$（滑动窗口最小值）。\n\n用单调队列维护窗口内 dp[j] 的最小值，$O(n)$。\n\n```cpp\n// 滑动窗口最小值\ndeque<int> dq;\nfor (int i = 1; i <= n; i++) {\n    while (!dq.empty() && dp[dq.back()] >= dp[i]) dq.pop_back();\n    dq.push_back(i);\n    while (dq.front() < i - k) dq.pop_front();  // 窗口大小 k\n    // dp[i] = dp[dq.front()] + w[i]\n}\n```\n\n## 四、常见 DP 优化总结\n\n| 优化方法 | 适用转移形式 | 复杂度 | 关键条件 |\n|---|---|---|---|\n| 单调队列 | 滑动窗口 min/max | $O(n)$ | 决策区间连续 |\n| 斜率优化 | $a[i]b[j]+dp[j]$ | $O(n)$ / $O(n \\log n)$ | 可整理为直线 |\n| 四边形不等式 | 区间 DP | $O(n^2)$ | w 满足四边形不等式 |\n| 决策单调性 | $dp[i]=min(dp[j]+w(j,i))$ | $O(n \\log n)$ | w 满足四边形不等式 |\n| 数据结构优化 | 区间查询转移 | $O(n \\log n)$ | 决策区间可查询 |\n\n## 五、怎么判断用哪种优化？\n\n1. 先写 $O(n^2)$ 暴力，观察转移方程形式。\n2. 若决策区间是滑动窗口 → 单调队列。\n3. 若能整理为 $y=kx+b$ → 斜率优化。\n4. 若是区间 DP 且 w 看起来满足四边形不等式 → 打表验证 opt 单调性。\n5. 都不满足 → 考虑数据结构（线段树/平衡树）或 CDQ 分治。\n\n## 复杂度\n\n- 斜率优化：$O(n)$（x 单调）或 $O(n \\log n)$（x 不单调）\n- 四边形不等式：$O(n^2)$（从 $O(n^3)$ 优化）\n- 单调队列：$O(n)$\n\n## 常见应用\n\n1. CCPC：斜率优化（玩具装箱、任务安排）、四边形不等式（邮局、合并石子）、单调队列。\n2. 蓝桥杯：单调队列优化（简单）、斜率优化入门。\n3. 与数据结构结合：平衡树维护凸壳、CDQ 分治 + 斜率优化。\n\n## 补充优化手段\n\n1. **wqs 二分（凸优化）**：当目标函数带\"恰好选 k 个\"的凸性约束时，给每个物品一个额外代价 c，二分 c 使最优解恰好用 k 个（P4767 邮局、CF739E）。社区经验：\"注意函数必须满足凸性，否则二分失效\"。\n2. **数据结构优化**：转移需要区间查询最值时用线段树/树状数组维护（P2605 基站选址——线段树优化；P3287 玉米田——二维树状数组）。\n3. **SOS DP**：子集和类转移用逐位递推（见\"状态压缩 DP\"章的 SOS 小节）。\n4. **矩阵加速**：常系数线性递推用矩阵快速幂（见\"矩阵加速 DP\"章）。\n5. **决策单调性验证法**：先写 O(n²) 暴力，记录每个状态的**最优决策点 opt[i]**，检查 opt 是否单调——单调即可用二分 + 栈优化（P1912 诗人小G）。\n\n## 洛谷经典题\n\n- P3195 玩具装箱（斜率优化模板）\n- P3628 特别行动队（斜率优化）\n- P1912 诗人小G（决策单调性）\n- P4767 邮局（wqs 二分 + 决策单调性）\n- P2605 基站选址（线段树优化）\n\n## 社区经验\n\n1. **先确认优化合法性**：斜率优化要求决策点横坐标单调或斜率单调（否则要 CDQ/平衡树），四边形不等式要先验证 opt 单调。\n2. **优先写暴力**：$O(n^2)$ 暴力过样例后再上优化，防止优化写错无从对照。\n3. **整数斜率避免除法**：比较斜率用**交叉相乘**（`(y2-y1)*(x3-x2)` 与 `(y3-y2)*(x2-x1)`），避免浮点误差——这是斜率优化的经典坑。",
       "templateCode": "#include <bits/stdc++.h>\nusing namespace std;\nconst int N = 5e4 + 5, INF = 1e9;\n\n// 1. 斜率优化：玩具装箱（P3195）\n// dp[i] = min(dp[j] + (sum[i]-sum[j]+i-j-1-L)^2)\n// 令 a[i] = sum[i]+i, b[j] = sum[j]+j+1+L\n// dp[i] = min(dp[j] + (a[i]-b[j])^2) = min(dp[j]+b[j]^2 - 2*a[i]*b[j]) + a[i]^2\n// 点 (b[j], dp[j]+b[j]^2)，斜率 2*a[i]\nlong long dp[N], sum[N], a[N], b[N];\nint q[N];\n\ndouble slope(int i, int j) {\n    return (double)(b[j]*b[j]+dp[j] - b[i]*b[i]-dp[i]) / (b[j] - b[i]);\n}\n\nvoid slopeOpt(int n, int L) {\n    int head = 1, tail = 1;\n    q[1] = 0;\n    for (int i = 1; i <= n; i++) {\n        a[i] = sum[i] + i;\n        b[i] = sum[i] + i + 1 + L;\n        while (head < tail && slope(q[head], q[head+1]) <= 2.0 * a[i]) head++;\n        int j = q[head];\n        dp[i] = dp[j] + (a[i] - b[j]) * (a[i] - b[j]);\n        while (head < tail && slope(q[tail-1], q[tail]) >= slope(q[tail], i)) tail--;\n        q[++tail] = i;\n    }\n}\n\n// 2. 单调队列优化：滑动窗口最大值\nvector<int> slidingWindowMax(vector<int>& a, int k) {\n    vector<int> ans;\n    deque<int> dq;\n    for (int i = 0; i < (int)a.size(); i++) {\n        while (!dq.empty() && a[dq.back()] <= a[i]) dq.pop_back();\n        dq.push_back(i);\n        while (dq.front() <= i - k) dq.pop_front();\n        if (i >= k - 1) ans.push_back(a[dq.front()]);\n    }\n    return ans;\n}\n\n// 3. 四边形不等式优化：石子合并（环形，简化版线性）\nint dp2[N][N], opt[N][N], w2[N][N];\nvoid quadOpt(int n) {\n    for (int i = 1; i <= n; i++) { dp2[i][i] = 0; opt[i][i] = i; }\n    for (int len = 2; len <= n; len++) {\n        for (int l = 1; l + len - 1 <= n; l++) {\n            int r = l + len - 1;\n            dp2[l][r] = INF;\n            for (int k = opt[l][r-1]; k <= opt[l+1][r]; k++) {\n                int val = dp2[l][k] + dp2[k+1][r] + w2[l][r];\n                if (val < dp2[l][r]) { dp2[l][r] = val; opt[l][r] = k; }\n            }\n        }\n    }\n}\n\nint main() {\n    // 斜率优化示例\n    int n = 5, L = 4;\n    int c[] = {0, 1, 2, 3, 4, 5};\n    for (int i = 1; i <= n; i++) sum[i] = sum[i-1] + c[i];\n    slopeOpt(n, L);\n    cout << \"玩具装箱 dp[n] = \" << dp[n] << endl;\n    \n    // 单调队列示例\n    vector<int> a = {1,3,-1,-3,5,3,6,7};\n    auto res = slidingWindowMax(a, 3);\n    cout << \"滑动窗口最大值: \";\n    for (int x : res) cout << x << \" \";\n    cout << endl;\n    return 0;\n}",
       "thinkingQuestions": [
         {
@@ -2253,6 +2253,283 @@
           "q": "单调队列优化和斜率优化有什么区别和联系？",
           "hint": "决策区间 vs 决策函数形式。",
           "answer": "区别：单调队列优化适用于决策区间是连续滑动窗口（如 j ∈ [i-k, i-1]），直接维护窗口内 dp[j] 的最值；斜率优化适用于转移函数能整理为 y=kx+b 形式，维护凸壳而非简单最值。联系：两者都用单调队列维护候选决策集，都利用了\"某些决策永远不会再成为最优\"的性质提前弹出。有些问题两者结合（如斜率优化中 x 单调时本质也是用单调队列维护凸壳）。"
+        }
+      ]
+    },
+    {
+      "id": "knapsack-adv",
+      "name": "背包进阶",
+      "nameEn": "Advanced Knapsack",
+      "category": "动态规划",
+      "difficulty": 4,
+      "frequency": 5,
+      "tags": [
+        "竞赛"
+      ],
+      "prerequisites": [
+        "knapsack"
+      ],
+      "summary": "分组/混合/有依赖背包、二维费用、恰好装满与方案计数——洛谷背包题完整体系。",
+      "content": "## 核心思想\n\n基础背包（01 / 完全 / 多重）之外，洛谷与竞赛里高频出现的背包变体：**分组背包、混合背包、有依赖背包、二维费用背包、恰好装满与方案计数**。核心始终是\"把题目转化成**价值 + 体积**的模型\"（P1941 飞扬的小鸟 就是把上升下降建模成背包），再套用 01 背包\"倒序防重复\"的核心技巧。\n\n## 一、分组背包：每组至多选一个\n\n每组内若干物品互斥，最多选一件。**先枚举组，再倒序枚举容量，最后枚举组内物品**——顺序不能乱：\n\n```cpp\nfor (int g = 1; g <= G; g++)                 // 1. 枚举组\n    for (int j = C; j >= 0; j--)             // 2. 倒序容量（保证每组只选一个）\n        for (int k : group[g])               // 3. 枚举组内物品\n            if (j >= w[k])\n                dp[j] = max(dp[j], dp[j - w[k]] + v[k]);\n```\n\n- 洛谷：P1757 通天之分组背包（模板）。\n- 社区经验：内层\"组内物品\"必须放在容量循环**之内**，否则一组能选多个，退化为多重背包。\n\n## 二、混合背包：三种背包混在一起\n\n把 01 / 完全 / 多重物品按类型分别处理：01 倒序、完全正序、多重二进制拆分后按 01 处理。P1833 樱花 是经典模板。\n\n## 三、有依赖背包（主件 + 附件）\n\n每个主件有若干附件，附件必须选主件才可用（P1064 金明的预算方案）。**思路：对每个主件，把\"选哪些附件\"的所有组合枚举出来**（附件数 ≤ 2 时可枚举 2^2 种），每组组合视为一个\"物品\"做分组背包：\n\n```cpp\n// 主件 i 有附件集合 att[i]：枚举选法（不选主件 / 只选主件 / 主件+附件1 / ...）\nfor (int s = 0; s < (1 << att[i].size()); s++) {\n    int wsum = w[i], vsum = v[i];       // 选主件为前提\n    for (int b = 0; b < att[i].size(); b++)\n        if (s >> b & 1) { wsum += w[att[i][b]]; vsum += v[att[i][b]]; }\n    // 得到一组\"物品\"，加入主件 i 的分组\n}\n```\n\n- 附件数多（一般 ≤ 5）时用 DFS 枚举所有组合。\n- 推广：附件还能有附件 → **树上背包**（见\"树上进阶 DP\"），P2014 选课 就是森林上的有依赖背包。\n\n## 四、二维费用背包\n\n容量有两维（如重量 + 体积），`dp[j][k]` 表示两维容量为 j、k 的最大价值：\n\n```cpp\nfor (int i = 0; i < n; i++)\n    for (int j = C1; j >= w1[i]; j--)\n        for (int k = C2; k >= w2[i]; k--)\n            dp[j][k] = max(dp[j][k], dp[j - w1[i]][k - w2[i]] + v[i]);\n```\n\n- 洛谷：P1855 榨取kkksc03（金钱 + 时间两维费用）。\n- \"至多 / 至少 / 恰好\"三种约束对应初始化差异（见下）。\n\n## 五、恰好装满 vs 不超过容量\n\n| 要求 | 初始化 | 含义 |\n|---|---|---|\n| 不超过容量 | dp[0..C] = 0 | 未装任何物品价值 0，任何容量都合法 |\n| 恰好装满 | dp[0] = 0，dp[1..C] = -INF | 只有容量 0 是\"合法起点\"，其余不可达 |\n\n转移不变，**只改初始化**。P5020 货币系统（计数 + 恰好装满思路）是经典。\n\n## 六、背包方案计数\n\n把 max 换成加：`dp[j] += dp[j - w[i]]`（01 背包时同样倒序）。计数题目注意取模（P5020 用高精或 long long）。\n\n## 七、背包的常见坑点\n\n1. **容量维度开多大**：注意背包容量可能不是 n 而是\"值域\"（P2340 Cow Exhibition 用 f[i] 存智商的 max，情商做下标）。\n2. **恰好装满的 -INF** 别用 0，否则会\"凭空\"组合出非法方案。\n3. **有依赖背包附件不能单独作为物品** 参与分组，只能挂在主件上。\n4. **分组背包循环顺序**：组 → 容量 → 组内物品，三者顺序是硬规则。\n\n## 复杂度\n\n- 分组 / 混合：$O(G·C·k)$（k 为组内物品数）。\n- 有依赖（枚举组合）：$O(C·2^{附件数})$。\n- 二维费用：$O(n·C_1·C_2)$。",
+      "templateCode": "#include <bits/stdc++.h>\nusing namespace std;\n\n// 1. 分组背包（P1757 模板）\nint groupKnapsack(vector<vector<pair<int,int>>>& groups, int C) {\n    vector<int> dp(C + 1, 0);\n    for (auto& g : groups) {                 // 组\n        for (int j = C; j >= 0; j--) {       // 容量倒序\n            for (auto& [w, v] : g) {\n                if (j >= w) dp[j] = max(dp[j], dp[j - w] + v);\n            }\n        }\n    }\n    return dp[C];\n}\n\n// 2. 混合背包：w/v/s 数组，s=1 为 01，s>1 为多重，s=-1 为完全\nint mixedKnapsack(vector<int>& w, vector<int>& v, vector<int>& s, int C) {\n    vector<int> dp(C + 1, 0);\n    for (int i = 0; i < (int)w.size(); i++) {\n        if (s[i] == -1) {                    // 完全：正序\n            for (int j = w[i]; j <= C; j++)\n                dp[j] = max(dp[j], dp[j - w[i]] + v[i]);\n        } else {                             // 01 / 多重：二进制拆成 01 倒序\n            int cnt = s[i], k = 1;\n            while (k <= cnt) {\n                for (int j = C; j >= w[i] * k; j--)\n                    dp[j] = max(dp[j], dp[j - w[i] * k] + v[i] * k);\n                cnt -= k; k <<= 1;\n            }\n            if (cnt > 0)\n                for (int j = C; j >= w[i] * cnt; j--)\n                    dp[j] = max(dp[j], dp[j - w[i] * cnt] + v[i] * cnt);\n        }\n    }\n    return dp[C];\n}\n\n// 3. 恰好装满：dp[0]=0，其余 -INF\nint exactlyFill(vector<int>& w, vector<int>& v, int C) {\n    const int NEG = -1e9;\n    vector<int> dp(C + 1, NEG);\n    dp[0] = 0;\n    for (int i = 0; i < (int)w.size(); i++)\n        for (int j = C; j >= w[i]; j--)\n            dp[j] = max(dp[j], dp[j - w[i]] + v[i]);\n    return dp[C] < 0 ? -1 : dp[C];           // -1 表示无法恰好装满\n}\n\n// 4. 方案计数（01 背包）：mod 取模\nint countWays(vector<int>& w, int C) {\n    const int MOD = 1e9 + 7;\n    vector<int> dp(C + 1, 0);\n    dp[0] = 1;\n    for (int i = 0; i < (int)w.size(); i++)\n        for (int j = C; j >= w[i]; j--)\n            dp[j] = (dp[j] + dp[j - w[i]]) % MOD;\n    return dp[C];\n}",
+      "thinkingQuestions": [
+        {
+          "q": "分组背包为什么容量循环要在组内物品循环之前？",
+          "hint": "防止一组选多个。",
+          "answer": "若先枚举组内物品再枚举容量，同一个容量会被组内多个物品先后更新，一组就能选多件；先倒序枚举容量，再枚举组内物品，每个容量只会被该组\"最好的一件\"覆盖，保证每组至多选一个。"
+        },
+        {
+          "q": "有依赖背包为什么要把附件组合枚举成\"物品\"？",
+          "hint": "把依赖转成互斥。",
+          "answer": "附件必须随主件出现，不能单独决策。把\"主件+附件组合\"整体看成一个候选，不同组合在组内互斥（只能选一种），就转化成了标准分组背包。"
+        },
+        {
+          "q": "恰好装满和不超过容量，初始化为什么不同？",
+          "hint": "非法状态的表示。",
+          "answer": "不超过容量时任何容量都可从\"什么都不装\"出发，全部初始化 0；恰好装满要求方案总重量精确等于容量，只有容量 0 是合法起点，其余容量初始化为 -INF 表示\"不可达\"，转移中非法状态不会被使用。"
+        }
+      ]
+    },
+    {
+      "id": "sequence-dp",
+      "name": "双序列 DP",
+      "nameEn": "Sequence DP",
+      "category": "动态规划",
+      "difficulty": 4,
+      "frequency": 5,
+      "tags": [
+        "面试",
+        "竞赛"
+      ],
+      "prerequisites": [
+        "linear-dp"
+      ],
+      "summary": "LCS、编辑距离、LCIS、双路径取物——两个序列/两条路径上的经典 DP，面试手撕高频。",
+      "content": "## 核心思想\n\n双序列 DP 的状态定义在两个序列（或两条路径）上：`dp[i][j]` 表示\"处理到第一个序列前 i 个、第二个序列前 j 个\"的最优值。核心套路是**分类讨论当前两个元素取/不取**。\n\n## 一、最长公共子序列 LCS\n\n`dp[i][j]` = A 前 i 个与 B 前 j 个的 LCS 长度：\n\n$$dp[i][j] = \\begin{cases} dp[i-1][j-1] + 1 & A_i = B_j \\\\ \\max(dp[i-1][j], dp[i][j-1]) & A_i \\neq B_j \\end{cases}$$\n\n```cpp\nint lcs(string& a, string& b) {\n    int n = a.size(), m = b.size();\n    vector<vector<int>> dp(n + 1, vector<int>(m + 1));\n    for (int i = 1; i <= n; i++)\n        for (int j = 1; j <= m; j++)\n            dp[i][j] = (a[i-1] == b[j-1])\n                ? dp[i-1][j-1] + 1\n                : max(dp[i-1][j], dp[i][j-1]);\n    return dp[n][m];\n}\n```\n\n- **空间优化**：只保留两行 `dp[2][m+1]`。\n- **特殊性质**：若 A、B 都是 1..n 的排列，LCS 可转化为 **LIS**：把 B 映射成 A 中的位置，求 B 的 LIS（P1439，$O(n \\log n)$）。社区经典 trick：\"序列 LCS 在元素唯一时等于映射后的 LIS\"。\n- 洛谷：P1439【模板】最长公共子序列（nlogn 版）。\n\n## 二、编辑距离（Levenshtein）\n\n把 A 变成 B 的最少操作（插入 / 删除 / 替换各 1 代价）：\n\n$$dp[i][j] = \\min\\begin{cases} dp[i-1][j] + 1 & \\text{删} A_i \\\\ dp[i][j-1] + 1 & \\text{插} B_j \\\\ dp[i-1][j-1] + [A_i \\neq B_j] & \\text{替 / 匹配} \\end{cases}$$\n\n初始化：`dp[i][0] = i`（全删）、`dp[0][j] = j`（全插）。力扣 72 编辑距离、牛客\"编辑距离\"是面试必刷。\n\n## 三、最长公共子串（连续）\n\n区别在于**连续**：相等时 `dp[i][j] = dp[i-1][j-1] + 1`，不等时**归零**（`dp[i][j] = 0`），答案取全局 max，而不是 dp[n][m]。\n\n## 四、最长公共上升子序列 LCIS\n\n状态 `dp[i][j]` = A 前 i 个与 B 前 j 个、且**以 B[j] 结尾**的 LCIS 长度。转移时维护 `mx = max(dp[i-1][k])`（k 满足 B[k] < B[j]）：\n\n```cpp\nint lcis(vector<int>& a, vector<int>& b) {\n    int n = a.size(), m = b.size();\n    vector<int> dp(m + 1, 0);\n    for (int i = 1; i <= n; i++) {\n        int mx = 0;\n        for (int j = 1; j <= m; j++) {\n            if (a[i-1] == b[j-1]) dp[j] = max(dp[j], mx + 1);\n            if (b[j-1] < a[i-1]) mx = max(mx, dp[j]);   // 维护可衔接的最大值\n        }\n    }\n    return *max_element(dp.begin(), dp.end());\n}\n```\n\n## 五、双路径 / 传纸条类\n\n两条路径同时走（P1006 传纸条、P1004 方格取数）：两人同时从起点出发，`dp[i][j][k]` 表示两人分别在 (i, i+j-k) 与 (k, ...) 位置——**用\"步数相等\"压缩一维**，两人走到同一格时只取一次价值：\n\n```cpp\n// 经典写法：s 步，第一个人横坐标 i，第二个人横坐标 j\n// dp[s][i][j]：同走 s 步，分别到 (i, s-i) 与 (j, s-j)\n// 转移：两人各自来自 上/左 共 4 种组合\n```\n\n- 等价模型：**方格取数 / 双线程 DP**，蓝桥与 NOIP 常考。\n- 社区经验：\"两条路径不能相交\"通常可以直接按\"不相交即取一次\"处理，不需要真的判重路径。\n\n## 六、常见坑点\n\n1. **LCS 与最长公共子串混淆**：一个可不连续、一个必须连续，转移完全不同。\n2. **编辑距离初始化**：第一行 / 第一列是插入 / 删除的累计，漏了会全错。\n3. **LCIS 的 mx 要在 a[i]==b[j] 判断之前更新**，顺序错了算出来偏大。\n4. **双路径 dp 的步数压缩**：两人步数相同才能同时转移，别拆成两条独立路径。\n\n## 复杂度\n\n- LCS / 编辑距离 / LCIS：$O(nm)$（LCIS 可优化到 $O(nm)$ 一维）。\n- 双路径：$O(n^3)$（步数 × 两横坐标）。",
+      "templateCode": "#include <bits/stdc++.h>\nusing namespace std;\n\n// 1. 最长公共子序列 LCS\nint lcs(const string& a, const string& b) {\n    int n = a.size(), m = b.size();\n    vector<int> dp(m + 1, 0), pre(m + 1, 0);\n    for (int i = 1; i <= n; i++) {\n        for (int j = 1; j <= m; j++) {\n            if (a[i-1] == b[j-1]) dp[j] = pre[j-1] + 1;\n            else dp[j] = max(dp[j-1], pre[j]);\n        }\n        swap(dp, pre);\n        fill(dp.begin(), dp.end(), 0);\n    }\n    return pre[m];\n}\n\n// 2. 编辑距离（力扣 72）\nint editDistance(string a, string b) {\n    int n = a.size(), m = b.size();\n    vector<vector<int>> dp(n + 1, vector<int>(m + 1));\n    for (int i = 0; i <= n; i++) dp[i][0] = i;\n    for (int j = 0; j <= m; j++) dp[0][j] = j;\n    for (int i = 1; i <= n; i++)\n        for (int j = 1; j <= m; j++)\n            dp[i][j] = min({dp[i-1][j] + 1,\n                            dp[i][j-1] + 1,\n                            dp[i-1][j-1] + (a[i-1] != b[j-1])});\n    return dp[n][m];\n}\n\n// 3. 最长公共上升子序列 LCIS（O(nm)）\nint lcis(const vector<int>& a, const vector<int>& b) {\n    int n = a.size(), m = b.size();\n    vector<int> dp(m + 1, 0);\n    for (int i = 1; i <= n; i++) {\n        int mx = 0;\n        for (int j = 1; j <= m; j++) {\n            if (a[i-1] == b[j-1]) dp[j] = max(dp[j], mx + 1);\n            if (b[j-1] < a[i-1]) mx = max(mx, dp[j]);\n        }\n    }\n    return *max_element(dp.begin(), dp.end());\n}\n\nint main() {\n    cout << lcs(\"abcde\", \"ace\") << endl;       // 3\n    cout << editDistance(\"horse\", \"ros\") << endl; // 3\n    cout << lcis({1,3,2,4}, {1,2,3,4}) << endl;  // 3: 1,2,4\n    return 0;\n}",
+      "thinkingQuestions": [
+        {
+          "q": "LCS 为什么可以转成 LIS 来优化？什么条件下可以？",
+          "hint": "元素唯一可映射。",
+          "answer": "当两个序列都是同一集合的排列（元素唯一）时，把 B 的每个元素映射成它在 A 中的下标，那么\"B 的某个子序列是 A 的子序列\"等价于\"这些下标递增\"，即求映射序列的 LIS，可用 O(n log n)。元素有重复时此映射不唯一，不适用。"
+        },
+        {
+          "q": "编辑距离的三种操作如何在转移中体现？",
+          "hint": "删/插/替。",
+          "answer": "dp[i][j] 可由三种前驱到达：删掉 A[i]（dp[i-1][j]+1）、在 A 中插入 B[j]（dp[i][j-1]+1）、用 B[j] 替换/匹配 A[i]（dp[i-1][j-1]+(A[i]!=B[j])），三者取最小。"
+        },
+        {
+          "q": "双路径 DP 为什么需要两人\"同时走\"？直接求两次最大值为什么错？",
+          "hint": "重叠格子只能取一次。",
+          "answer": "分两次贪心取最大会重复计算两条路径交叉的格子价值；同时走的状态设计让两人在某格相遇时只累加一次价值，保证总价值正确。"
+        }
+      ]
+    },
+    {
+      "id": "counting-dp",
+      "name": "计数 DP",
+      "nameEn": "Counting DP",
+      "category": "动态规划",
+      "difficulty": 4,
+      "frequency": 4,
+      "tags": [
+        "竞赛"
+      ],
+      "prerequisites": [
+        "dp",
+        "combinatorics"
+      ],
+      "summary": "用 DP 数方案数：递推计数、卡特兰数、组合数递推、排列计数与容斥计数，注意取模。",
+      "content": "## 核心思想\n\n计数 DP 的目标是**数出满足条件的方案数**（而非最值）。转移把 max/min 换成 **加法**，边界是\"空集的方案数 = 1\"。竞赛中计数题几乎都要**取模**，且常用**组合数递推**与**容斥**辅助。\n\n## 一、递推计数\n\n按\"最后一步\"分类计数。P1077 摆花：`dp[i][j]` = 前 i 种花摆 j 盆的方案数：\n\n```cpp\ndp[i][j] = sum_{k=0..a[i], k<=j} dp[i-1][j-k]\n```\n\n前缀和可优化到 $O(nm)$。P1044 栈（出栈序列数）就是**卡特兰数**。\n\n## 二、卡特兰数\n\n第 n 项：$C_n = \\frac{1}{n+1}\\binom{2n}{n}$，递推：$C_0=1,\\ C_n = \\sum_{i=0}^{n-1} C_i C_{n-i}$。\n\n**等价对象**：出栈序列（P1044）、n 对括号合法序列、n+1 个矩阵链乘方式、凸多边形三角剖分、n 个节点二叉树形态数。看到这些直接套卡特兰。\n\n## 三、组合数 DP（杨辉三角）\n\n$$\\binom{n}{k} = \\binom{n-1}{k} + \\binom{n-1}{k-1}$$\n\nP2822 组合数问题：预处理组合数 + 二维前缀和，回答\"有多少组 $\\binom{i}{j}$ 是 k 的倍数\"。**注意取模**：k 不一定是质数时不能用逆元，用递推 + 对 k 取模计数。\n\n## 四、排列计数\n\n\"错排\"：$D_n = (n-1)(D_{n-1} + D_{n-2})$（n 封信装错信封）。P2606 排列计数 需要 DFS 序 + 组合数（卡特兰相关）。\n\n## 五、容斥计数\n\n\"至少一个 / 恰好一个 / 都不满足\"类问题常用**补集转化 + 容斥**：\n- 总数 - 不满足 = 满足；\n- $|A \\cup B| = |A| + |B| - |A \\cap B|$ 推广到任意集合。\n\nP5664 Emiya 家今天的饭（省选）：每种食材最多用一半 → **补集（某食材超过一半）枚举该食材**，剪掉无用状态。社区评价：\"剪去无用状态 + 补集转化是这类题的标准动作\"。\n\n## 六、计数 DP 的坑点\n\n1. **取模**：加法转移处每步取模，减法（容斥）先加 MOD 再取模。\n2. **边界**：dp[0]（空方案）= 1 而不是 0，这是计数 DP 和最优 DP 最大的不同。\n3. **溢出**：中间量可能很大，用 long long，必要时提前取模。\n4. **重复计数**：枚举\"最后一步\"时要保证分类互斥、不重不漏（例如按第一个元素/最后一个元素分类）。\n\n## 复杂度\n\n- 递推计数：一般 $O(n^2)$ 或 $O(nm)$。\n- 卡特兰：预处理 $O(n)$（组合数用逆元）或 $O(n^2)$ 递推。\n- 容斥计数：$O(2^k)$（k 为容斥集合数）。",
+      "templateCode": "#include <bits/stdc++.h>\nusing namespace std;\nconst int MOD = 1e9 + 7;\n\n// 1. 组合数递推（杨辉三角，n 小）\nlong long C[1005][1005];\nvoid initComb(int n) {\n    for (int i = 0; i <= n; i++) {\n        C[i][0] = C[i][i] = 1;\n        for (int j = 1; j < i; j++)\n            C[i][j] = (C[i-1][j-1] + C[i-1][j]) % MOD;\n    }\n}\n\n// 2. 卡特兰数（递推，O(n^2)，n ≤ 5000）\nlong long catalan(int n) {\n    vector<long long> h(n + 1);\n    h[0] = 1;\n    for (int i = 1; i <= n; i++)\n        for (int j = 0; j < i; j++)\n            h[i] = (h[i] + h[j] * h[i-1-j]) % MOD;\n    return h[n];\n}\n\n// 3. 错排 D_n\nlong long derange(int n) {\n    long long d0 = 1, d1 = 0;   // D_0=1（空排列）, D_1=0\n    if (n == 0) return d0;\n    for (int i = 2; i <= n; i++) {\n        long long d2 = (i - 1) * (d0 + d1) % MOD;\n        d0 = d1; d1 = d2;\n    }\n    return d1;\n}\n\n// 4. P1077 摆花：前 i 种花摆 j 盆（前缀和优化）\nlong long plantFlowers(vector<int>& a, int m) {\n    int n = a.size();\n    vector<long long> dp(m + 1, 0);\n    dp[0] = 1;\n    for (int i = 0; i < n; i++) {\n        vector<long long> pre(m + 1);\n        pre[0] = dp[0];\n        for (int j = 1; j <= m; j++) pre[j] = (pre[j-1] + dp[j]) % MOD;\n        vector<long long> ndp(m + 1, 0);\n        for (int j = 0; j <= m; j++) {\n            int l = max(0, j - a[i]);\n            ndp[j] = (pre[j] - (l ? pre[l-1] : 0) + MOD) % MOD;\n        }\n        dp = ndp;\n    }\n    return dp[m];\n}",
+      "thinkingQuestions": [
+        {
+          "q": "计数 DP 与最优 DP 的初始化有什么本质区别？",
+          "hint": "空方案的计数。",
+          "answer": "最优 DP 初始化通常是最值语义（0 或 ±INF）；计数 DP 的 dp[0] = 1 表示\"空方案算 1 种\"，所有合法方案由空方案逐步\"添加\"而来，漏掉这个 1 会把所有答案数成 0。"
+        },
+        {
+          "q": "为什么组合数递推不能像求逆元那样统一取模？",
+          "hint": "k 可能不是质数。",
+          "answer": "用阶乘 + 逆元求组合数要求模数是质数（逆元存在）；递推式 C(n,k)=C(n-1,k)+C(n-1,k-1) 只有加法和乘法，对任意模数都成立，且能直接对 k 取模判断整除性（如 P2822）。"
+        },
+        {
+          "q": "容斥计数中\"补集转化\"一般怎么选补集？",
+          "hint": "枚举破坏条件的对象。",
+          "answer": "当\"全部满足\"难数而\"某个具体对象违规\"好数时，枚举违规对象（如 P5664 枚举超过一半的食材），把全局违规方案拆成互斥的若干小类分别计数，最后用总数减去。"
+        }
+      ]
+    },
+    {
+      "id": "game-dp",
+      "name": "博弈 DP",
+      "nameEn": "Game Theory DP",
+      "category": "动态规划",
+      "difficulty": 4,
+      "frequency": 3,
+      "tags": [
+        "竞赛"
+      ],
+      "prerequisites": [
+        "dp"
+      ],
+      "summary": "Nim 游戏、必胜/必败态、SG 函数——用 DP 判定博弈胜负，蓝桥与竞赛入门高频。",
+      "content": "## 核心思想\n\n博弈 DP 处理**公平组合游戏**（ICG：双方操作相同、无随机、有限步）：每个局面要么必胜（先手胜）要么必败（先手必败）。判定规则：\n\n- **必败态**：没有任何操作能到达必败态；\n- **必胜态**：存在一步操作能到达必败态。\n\n```mermaid\ngraph LR\n  A[\"状态 u\"] --> B{\"存在后继到必败态?\"}\n  B -- \"是\" --> C[\"u 必胜\"]\n  B -- \"否\" --> D[\"u 必败\"]\n```\n\n## 一、Nim 游戏\n\nn 堆石子，每次取一堆中任意正整数个，取完者胜。**结论：异或和 $\\bigoplus a_i \\neq 0$ 先手必胜**（P2197 模板）。证明思路：异或和为 0 是必败态——任何操作都会破坏 0 异或，而对手总能再把它恢复成 0。\n\n## 二、SG 函数\n\n把局面抽象成有向图：`sg(u) = mex{ sg(v) | u → v }`，其中 `mex` 是最小未出现的非负整数。**终态 sg = 0（必败）**。\n\n- 单个游戏：`sg(u) ≠ 0` 先手必胜。\n- **多个独立游戏组合**：总 SG = 各子游戏 SG 的**异或**，非 0 必胜（Sprague-Grundy 定理）。\n\n```cpp\n// SG 模板：f[] 为允许的取子集合\nint sg[10005];\nbool vis[10005];\nint getSG(int x, vector<int>& f) {\n    if (sg[x] != -1) return sg[x];\n    memset(vis, 0, sizeof vis);\n    for (int k : f) if (x >= k) {\n        int s = getSG(x - k, f);\n        vis[s] = true;\n    }\n    for (int i = 0; ; i++) if (!vis[i]) return sg[x] = i;\n}\n```\n\n## 三、博弈 DP（非 Nim 类）\n\n不满足 Nim 结构时直接按\"必败态\"递推或记忆化。典型：P1290 欧几里得的游戏（按商分类讨论）、P1247 取火柴游戏（Nim 变体 + 输出方案）。\n\n## 四、常见模型\n\n1. **取石子类**：一堆取有限个（SG）、多堆（Nim/威佐夫）。\n2. **Wythoff 博弈**（P2252）：两堆石子，取任意一堆任意个或两堆取相同个，先手必胜条件 $|a-b|·\\frac{\\sqrt5+1}{2} = \\min(a,b)$（黄金分割）。\n3. **图上博弈**：棋盘/图上的移动游戏，按拓扑逆推胜负。\n4. **树/组合游戏**：每层状态设计 dp 值（如\"必胜必败 + 最优得分\"双值）。\n\n## 五、社区经验与坑点\n\n1. **先手/后手语义**：dp 状态明确写\"当前玩家操作\"还是\"先手玩家\"，两种定义转移不同。\n2. **必败态必为终态**：递归/递推要先确定所有终态（sg=0）。\n3. **mex 的取值**：从 0 开始找最小未出现值，不要从 1 开始。\n4. **多游戏异或**：忘记异或直接相加是常见错误。\n5. **打表找规律**：很多博弈题 n 小可暴力打表，观察周期/公式（如 Wythoff 黄金分割、Fibonacci 取石子）。\n\n## 复杂度\n\n- SG 记忆化：状态数 × 转移数，通常 $O(nk)$。\n- 博弈 DP：$O(状态 × 操作数)$。",
+      "templateCode": "#include <bits/stdc++.h>\nusing namespace std;\n\n// 1. Nim 游戏：异或和判定（P2197）\nbool nimWin(vector<int>& piles) {\n    int x = 0;\n    for (int p : piles) x ^= p;\n    return x != 0;\n}\n\n// 2. SG 函数（记忆化）\nint sg[10005];\nint mex(int x, vector<int>& f) {\n    if (sg[x] != -1) return sg[x];\n    bool vis[10005] = {0};\n    for (int k : f)\n        if (x >= k) vis[mex(x - k, f)] = true;\n    for (int i = 0; ; i++) if (!vis[i]) return sg[x] = i;\n}\n\n// 3. 简单取石子博弈 DP：一堆石子，每次取 f[] 中某数，取完者胜\n// win[i] = 是否存在 k∈f 使 win[i-k] == false（到达必败态）\nbool win[10005];\nbool takeStone(int n, vector<int>& f) {\n    win[0] = false;\n    for (int i = 1; i <= n; i++) {\n        win[i] = false;\n        for (int k : f)\n            if (i >= k && !win[i - k]) { win[i] = true; break; }\n    }\n    return win[n];\n}\n\nint main() {\n    cout << \"Nim {3,4,5} = \" << nimWin({3,4,5}) << endl;  // 3^4^5=2 → 胜\n    memset(sg, -1, sizeof sg);\n    vector<int> f = {1, 2, 3};   // 每次可取 1/2/3\n    cout << \"SG(5) = \" << mex(5, f) << endl;\n    cout << \"take(5) = \" << takeStone(5, f) << endl;  // 5%4=1 → 胜\n    return 0;\n}",
+      "thinkingQuestions": [
+        {
+          "q": "必胜态/必败态的递归定义是什么？为什么\"存在一步到必败\"就是必胜？",
+          "hint": "把局面推向对手的必败态。",
+          "answer": "若当前玩家存在一步操作把局面变成必败态（对手面对必败态），那么无论对手如何操作，当前玩家总能保持主动权直到获胜，所以当前是必胜态；若所有操作都只能把局面变成必胜态（交给对手优势），则当前是必败态。"
+        },
+        {
+          "q": "SG 定理为什么多个独立游戏的 SG 要异或而不是相加？",
+          "hint": "Nim 是 SG 的推广。",
+          "answer": "Nim 中每堆石子就是一个独立子游戏，其 SG 值恰等于该堆石子数，整个游戏的胜负由所有堆的异或决定——SG 定理把这一结论推广到任意公平组合游戏，异或保持了\"0 为必败\"的代数结构。"
+        },
+        {
+          "q": "打表找规律在博弈题中怎么用？",
+          "hint": "小数据暴力 → 观察周期。",
+          "answer": "n 较小时先用暴力 DP 打出胜负表，观察是否呈周期性或满足特定公式（如 Wythoff 的黄金分割、Fibonacci 数列），再用公式直接 O(1) 判定，同时验证正确性。"
+        }
+      ]
+    },
+    {
+      "id": "tree-dp-adv",
+      "name": "树上进阶 DP",
+      "nameEn": "Advanced Tree DP",
+      "category": "动态规划",
+      "difficulty": 5,
+      "frequency": 4,
+      "tags": [
+        "竞赛"
+      ],
+      "prerequisites": [
+        "tree-dp"
+      ],
+      "summary": "树上背包、换根 DP（二次扫描）、基环树 DP——树形 DP 的三座大山，省选高频。",
+      "content": "## 核心思想\n\n基础树形 DP（选/不选）之外，竞赛高频的三种进阶形态：**树上背包**（子树合并）、**换根 DP**（两次扫描）、**基环树 DP**（断环成链）。\n\n## 一、树上背包\n\n\"给一棵树，选若干节点/边，限制与子树有关\"——`dp[u][j]` = u 的子树内选 j 个（或 j 容量）的最优值，**合并子树时倒序枚举容量**防止同一子树重复选：\n\n```cpp\n// P2014 选课：dp[u][j] = u 的子树选 j 门课（含 u 自己）的最大学分\nvoid dfs(int u) {\n    dp[u][1] = val[u];                 // 只选 u\n    for (int v : son[u]) {\n        dfs(v);\n        for (int j = m; j >= 1; j--)   // 倒序！防 v 子树被用多次\n            for (int k = 1; k < j; k++)\n                dp[u][j] = max(dp[u][j], dp[u][j-k] + dp[v][k]);\n    }\n}\n```\n\n- 洛谷：P2014 选课（模板）、P1273 有线电视网、P2015 二叉苹果树、P1272 重建道路。\n- 有依赖背包的推广：附件树化后就是树上背包（见\"背包进阶\"）。\n- 坑：**容量维度的含义**（选节点数 / 容量 / 收益）；森林加虚拟根。\n\n## 二、换根 DP（二次扫描）\n\n需要求\"**以每个点为根**\"的答案时，朴素做 n 次 DFS 是 $O(n^2)$，换根 DP 只需两次：\n\n1. **第一次扫描**（自底向上）：算子树内贡献 `dp[u]`（u 为根时只考虑子树）。\n2. **第二次扫描**（自顶向下）：用父节点的完整答案**转移出**子节点的完整答案——`ans[v] = ans[u] - 子树v贡献 + 补上\"u 侧\"贡献`。\n\n```cpp\n// P3478 STA-Station：求以哪个点为根时，所有节点深度之和最大\nvoid dfs1(int u, int fa) {            // 第一次：子树深度和 + 子树大小\n    sz[u] = 1; sum[u] = 0;\n    for (int v : adj[u]) if (v != fa) {\n        dfs1(v, u);\n        sz[u] += sz[v];\n        sum[u] += sum[v] + sz[v];     // v 的每个节点深度 +1\n    }\n}\nvoid dfs2(int u, int fa) {            // 第二次：换根转移\n    for (int v : adj[u]) if (v != fa) {\n        sum[v] = sum[u] - sz[v] + (n - sz[v]);   // 子树v整体上移1，其余下移1\n        dfs2(v, u);\n    }\n}\n```\n\n- 洛谷：P3478【模板】STA-Station、P2986 Great Cow Gathering、P3047 Nearby Cows。\n- 社区经验：\"第一次扫描考虑子树内的贡献，第二次扫描考虑子树外/全局的贡献\"——换根的本质是把\"子树外贡献\"算出来。\n\n## 三、基环树 DP\n\nn 个点 n 条边（树上多一条边成环）——**突破口就在环上**：找出环，枚举环上每个点的状态（选/不选），把环拆成若干棵树分别 DP，再把环上结果按环型 DP 合并（P1453 城市环路 最大权独立集、P4381 Island 基环树直径）。\n\n```cpp\n// 找环（拓扑删叶）后，断环成链：枚举断点状态做两次树形 DP 取最优\n```\n\n- 常见做法：拓扑排序删叶找环 → 对每个环上点做子树 DP → 环上再做区间/序列 DP。\n- 坑：基环树的\"树部分\"和\"环部分\"要分开处理，直接当树做会算错。\n\n## 四、复杂度\n\n- 树上背包：$O(nm)$（合并时 $O(n·m^2)$ 朴素，可优化）。\n- 换根 DP：$O(n)$ 两次 DFS。\n- 基环树：$O(n)$（每部分线性）。",
+      "templateCode": "#include <bits/stdc++.h>\nusing namespace std;\n\nconst int N = 305;\nint n, m, val[N];\nvector<int> son[N];\nint dp[N][N];   // dp[u][j]: u 子树选 j 门（含 u）的最大学分\n\n// 1. 树上背包（P2014 选课，含虚拟根 0）\nvoid dfs(int u) {\n    dp[u][1] = val[u];\n    for (int v : son[u]) {\n        dfs(v);\n        for (int j = m; j >= 1; j--)\n            for (int k = 1; k < j; k++)\n                dp[u][j] = max(dp[u][j], dp[u][j-k] + dp[v][k]);\n    }\n}\n\n// 2. 换根 DP：所有节点深度和（P3478）\nint sz[N]; long long sum[N];\nvoid dfs1(int u, int fa) {\n    sz[u] = 1;\n    for (int v : adj[u]) if (v != fa) {\n        dfs1(v, u);\n        sz[u] += sz[v];\n        sum[u] += sum[v] + sz[v];\n    }\n}\nvoid dfs2(int u, int fa) {\n    for (int v : adj[u]) if (v != fa) {\n        sum[v] = sum[u] - sz[v] + (n - sz[v]);\n        dfs2(v, u);\n    }\n}\n\n// 3. 基环树：找环（拓扑删叶）\nint deg[N]; queue<int> q; bool inCycle[N];\nvoid findCycle(int n) {\n    for (int i = 1; i <= n; i++) if (deg[i] == 1) q.push(i);\n    for (int i = 1; i <= n; i++) inCycle[i] = true;\n    while (!q.empty()) {\n        int u = q.front(); q.pop();\n        inCycle[u] = false;\n        for (int v : adj[u]) if (--deg[v] == 1) q.push(v);\n    }\n}",
+      "thinkingQuestions": [
+        {
+          "q": "树上背包合并子树时，为什么容量要倒序？",
+          "hint": "防止子树重复选。",
+          "answer": "正序合并时 dp[u][j-k] 可能已经包含了对 v 子树的选取，再叠加 dp[v][k] 会让 v 子树被用多次；倒序保证合并 v 时用的 dp[u][*] 还是\"未包含 v\"的状态，每棵子树恰好参与一次。"
+        },
+        {
+          "q": "换根 DP 的两次扫描分别算什么？",
+          "hint": "子树内 / 子树外。",
+          "answer": "第一次自底向上算以 u 为根时其子树内部的贡献（如深度和、最近点距离）；第二次自顶向下，用父节点的全局答案减去\"子树 v 的贡献\"，再加上\"从 v 视角新增的父侧贡献\"，得到以 v 为根的全局答案。"
+        },
+        {
+          "q": "基环树 DP 为什么要先找环？不找环直接树形 DP 错在哪？",
+          "hint": "环让父子关系不唯一。",
+          "answer": "基环树有且只有一个环，环上任意两点互为\"父子\"，直接按树做 DFS 会产生循环依赖；先拓扑删叶找到环，把环上的点当作多棵树的根，环内部再单独用环型 DP（断环成链/枚举状态）处理，才能保证无后效性。"
+        }
+      ]
+    },
+    {
+      "id": "graph-dp",
+      "name": "图上 DP",
+      "nameEn": "Graph DP",
+      "category": "动态规划",
+      "difficulty": 4,
+      "frequency": 4,
+      "tags": [
+        "竞赛"
+      ],
+      "prerequisites": [
+        "dp",
+        "graph",
+        "topological-sort"
+      ],
+      "summary": "DAG 上按拓扑序 DP、最短路计数、SCC 缩点后 DP——图与 DP 的结合部。",
+      "content": "## 核心思想\n\n在**图**上做 DP 的关键是**保证无后效性**（无环）：DAG 按拓扑序递推；一般有向图先 SCC 缩点成 DAG 再递推；最短路类问题借用最短路算法顺序递推。\n\n## 一、DAG 上的 DP\n\n拓扑序即 DP 顺序：\n\n```cpp\n// dp[v] = max_{u→v} (dp[u] + w(u,v))（最长路）\nwhile (!q.empty()) {\n    int u = q.front(); q.pop();\n    for (int v : adj[u]) {\n        dp[v] = max(dp[v], dp[u] + w);\n        if (--indeg[v] == 0) q.push(v);\n    }\n}\n```\n\n- 洛谷：P1807 最长路（DAG 最长路模板）、P2285 打鼹鼠（把\"能否赶到\"化为曼哈顿距离 ≤ 时间差，事件序列成为 DAG，$O(m^2)$ 转移——社区经典转化：\"约束转成时间/距离不等式，问题变成 DAG 上的最长链\"）。\n\n## 二、最短路计数\n\n`cnt[v]` = 从 s 到 v 的最短路条数。用 Dijkstra/BFS 的**松弛顺序**递推：`cnt[v] += cnt[u]`（当 dist[u]+w == dist[v]），比当前最短路更短时重置 cnt[v] = cnt[u]。\n\n- 洛谷：P1144 最短路计数（BFS 版，边权 1）。\n\n## 三、缩点 + DP\n\n有向图有环时，先 **Tarjan 缩 SCC** 成 DAG，再做拓扑 DP（P2656 采蘑菇——缩点后 DAG 上 dp；P2515 软件安装——缩点 + 树上背包）。社区经验：\"缩点再按拓扑序进行 dp 是这类题的标准流程\"。\n\n## 四、基环树 / 一般图的 DP\n\n- 基环树见\"树上进阶 DP\"（先找环）。\n- 一般图 NP 难，DP 只对特殊图类（树、DAG、二分图）有效。\n\n## 五、常见坑点\n\n1. **不是 DAG 不能直接递推**：先判环（拓扑排序失败即有环）。\n2. **最短路计数注意取模与判重**：dist 相等才算同路径。\n3. **缩点后的新图要重建边并去重**（重边会影响计数）。\n4. 状态设计尽量只依赖\"前驱\"，别依赖\"后继\"。\n\n## 复杂度\n\n- DAG DP：$O(V + E)$。\n- 最短路计数：$O((V+E)\\log V)$。\n- 缩点：Tarjan $O(V+E)$ + DAG DP $O(V+E)$。",
+      "templateCode": "#include <bits/stdc++.h>\nusing namespace std;\n\n// 1. DAG 最长路（拓扑序 DP）\nint dagLongest(int n, vector<vector<int>>& adj, vector<int>& w) {\n    vector<int> indeg(n + 1, 0), dp(n + 1, 0);\n    for (int u = 1; u <= n; u++) for (int v : adj[u]) indeg[v]++;\n    queue<int> q;\n    for (int u = 1; u <= n; u++) if (indeg[u] == 0) q.push(u);\n    int ans = 0;\n    while (!q.empty()) {\n        int u = q.front(); q.pop();\n        for (int v : adj[u]) {\n            dp[v] = max(dp[v], dp[u] + w[v]);\n            ans = max(ans, dp[v]);\n            if (--indeg[v] == 0) q.push(v);\n        }\n    }\n    return ans;\n}\n\n// 2. 最短路计数（Dijkstra + 计数）\nconst int MOD = 1e9 + 7;\nvector<long long> dijkstraCount(int s, vector<vector<pair<int,int>>>& g) {\n    int n = g.size() - 1;\n    vector<long long> dist(n + 1, 1e18), cnt(n + 1, 0);\n    priority_queue<pair<long long,int>, vector<pair<long long,int>>, greater<>> pq;\n    dist[s] = 0; cnt[s] = 1; pq.push({0, s});\n    while (!pq.empty()) {\n        auto [d, u] = pq.top(); pq.pop();\n        if (d != dist[u]) continue;\n        for (auto [v, w] : g[u]) {\n            if (dist[u] + w < dist[v]) {\n                dist[v] = dist[u] + w;\n                cnt[v] = cnt[u];\n                pq.push({dist[v], v});\n            } else if (dist[u] + w == dist[v]) {\n                cnt[v] = (cnt[v] + cnt[u]) % MOD;\n            }\n        }\n    }\n    return cnt;  // cnt[v] = s 到 v 的最短路条数\n}\n\n// 3. SCC 缩点（Tarjan 找强连通分量，之后按分量建 DAG 做 DP）\n// 此处仅列框架：tarjan 求出每个点所属 scc → 建新图 → 拓扑 DP",
+      "thinkingQuestions": [
+        {
+          "q": "为什么 DAG 上的 DP 按拓扑序递推就一定正确？",
+          "hint": "拓扑序保证前驱先算。",
+          "answer": "拓扑序中每个点都排在其所有前驱之后，递推 dp[v] 时其依赖的 dp[u]（u 是 v 的前驱）已经全部算出，满足无后效性，所以一次遍历即可得到正确答案。"
+        },
+        {
+          "q": "最短路计数时为什么\"更短\"要重置而不是累加？",
+          "hint": "新的最短路覆盖旧的。",
+          "answer": "当发现更短路径时，之前累计的所有路径都不再是最短路，必须重置 cnt[v] = cnt[u]（沿新松弛方向）；只有路径长度相等时才累加，保证 cnt[v] 统计的是严格最短路的条数。"
+        },
+        {
+          "q": "有向图有环时为什么先缩点再 DP？",
+          "hint": "消除后效性。",
+          "answer": "环上的点互相依赖，无法直接按拓扑序递推；SCC 缩点后新图是 DAG，环被压缩成一个点（内部贡献单独处理），再按拓扑序 DP 就无后效性了。"
+        }
+      ]
+    },
+    {
+      "id": "dp-matrix",
+      "name": "矩阵加速 DP",
+      "nameEn": "Matrix Exponentiation DP",
+      "category": "动态规划",
+      "difficulty": 4,
+      "frequency": 3,
+      "tags": [
+        "竞赛"
+      ],
+      "prerequisites": [
+        "dp",
+        "matrix-fastpow"
+      ],
+      "summary": "线性递推用矩阵快速幂从 O(n) 加速到 O(k³logn)，还可做广义矩阵（min-plus）加速最短路。",
+      "content": "## 核心思想\n\n当 DP 是**常系数线性递推**（如 $f_n = f_{n-1} + f_{n-2}$、$f_n = a·f_{n-1} + b·f_{n-2}$），转移矩阵的 n 次幂可用**矩阵快速幂** $O(k^3 \\log n)$ 求出，把 $O(n)$ 递推加速到对数级。\n\n## 一、线性递推 → 转移矩阵\n\n以 $f_n = f_{n-1} + f_{n-2}$（斐波那契）为例：\n\n$$\\begin{pmatrix} f_n \\\\ f_{n-1} \\end{pmatrix} = \\begin{pmatrix} 1 & 1 \\\\ 1 & 0 \\end{pmatrix} \\begin{pmatrix} f_{n-1} \\\\ f_{n-2} \\end{pmatrix}$$\n\n则 $\\begin{pmatrix} f_n \\\\ f_{n-1} \\end{pmatrix} = M^{n-1} \\begin{pmatrix} f_1 \\\\ f_0 \\end{pmatrix}$。\n\n```cpp\n// P1962 斐波那契数列（n ≤ 1e18）\nconst int MOD = 1e9 + 7;\nusing Mat = vector<vector<long long>>;\nMat mul(Mat a, Mat b) {\n    int n = a.size(), m = b[0].size(), k = a[0].size();\n    Mat c(n, vector<long long>(m));\n    for (int i = 0; i < n; i++)\n        for (int t = 0; t < k; t++) if (a[i][t])\n            for (int j = 0; j < m; j++)\n                c[i][j] = (c[i][j] + a[i][t] * b[t][j]) % MOD;\n    return c;\n}\nMat mpow(Mat a, long long e) {\n    int n = a.size(); Mat r(n, vector<long long>(n));\n    for (int i = 0; i < n; i++) r[i][i] = 1;\n    while (e) { if (e & 1) r = mul(r, a); a = mul(a, a); e >>= 1; }\n    return r;\n}\n```\n\n## 二、通用模板：k 阶递推\n\n递推 $f_n = c_1 f_{n-1} + c_2 f_{n-2} + \\cdots + c_k f_{n-k}$：\n\n转移矩阵（k×k，第一行为系数，对角线为 1）：\n\n$$M = \\begin{pmatrix} c_1 & c_2 & \\cdots & c_{k-1} & c_k \\\\ 1 & 0 & \\cdots & 0 & 0 \\\\ \\vdots & & & & \\\\ 0 & 0 & \\cdots & 1 & 0 \\end{pmatrix}$$\n\n- 洛谷：P1939【模板】矩阵加速（三阶递推）。\n\n## 三、分段转移\n\n转移系数随阶段变化时（P3216 数学作业：$f_n = f_{n-1}·10^{len(n)} + n$，len(n) 是 n 的位数）——**按位数分段**，每段系数相同，段内矩阵快速幂，段与段之间矩阵相乘：\n\n$$\\begin{pmatrix} f_n \\\\ n \\\\ 1 \\end{pmatrix} = \\begin{pmatrix} 10^k & 1 & 1 \\\\ 0 & 1 & 1 \\\\ 0 & 0 & 1 \\end{pmatrix}^{cnt} \\begin{pmatrix} f_{n-1} \\\\ n-1 \\\\ 1 \\end{pmatrix}$$\n\n## 四、广义矩阵乘法：min-plus\n\n把矩阵乘法的 `(+, ×)` 换成 `(min, +)`（称为**广义矩阵乘法**，满足结合律即可快速幂）：\n\n- **恰好走 k 步的最短路**：邻接矩阵的 min-plus k 次幂（P2886 牛继电器，floyd 矩阵加速）。\n- 状态机转移、k 步方案数等也可用。\n\n## 五、社区经验与坑点\n\n1. **矩阵维度 k 小**（通常 ≤ 100），大维度 $O(k^3 \\log n)$ 会超时，注意 k。\n2. **首项对齐**：先手算初始向量 f_1..f_k，再乘 M^{n-k}。\n3. **广义乘法检查结合律**：min-plus 满足结合律（max-plus 也满足），其他自定义运算要验证。\n4. **取模**：所有乘法取模；广义 min-plus 不取模（是真实最短路）。\n5. **n 极大（1e18）**是矩阵加速的强信号；n 只有 1e7 且 k 小，直接递推可能更快（常数小）。\n\n## 复杂度\n\n- 标准矩阵乘/幂：$O(k^3 \\log n)$。\n- 稀疏矩阵优化：$O(k^2 \\log n)$。",
+      "templateCode": "#include <bits/stdc++.h>\nusing namespace std;\nconst int MOD = 1e9 + 7;\nusing Mat = vector<vector<long long>>;\n\nMat mul(const Mat& a, const Mat& b) {\n    int n = a.size(), m = b[0].size(), k = a[0].size();\n    Mat c(n, vector<long long>(m, 0));\n    for (int i = 0; i < n; i++)\n        for (int t = 0; t < k; t++) if (a[i][t])\n            for (int j = 0; j < m; j++)\n                c[i][j] = (c[i][j] + a[i][t] * b[t][j]) % MOD;\n    return c;\n}\n\nMat mpow(Mat a, long long e) {\n    int n = a.size();\n    Mat r(n, vector<long long>(n, 0));\n    for (int i = 0; i < n; i++) r[i][i] = 1;\n    while (e) {\n        if (e & 1) r = mul(r, a);\n        a = mul(a, a);\n        e >>= 1;\n    }\n    return r;\n}\n\n// P1962 斐波那契：f_n = f_{n-1} + f_{n-2}, f_0=0, f_1=1\nlong long fib(long long n) {\n    if (n == 0) return 0;\n    Mat M = {{1, 1}, {1, 0}};\n    Mat P = mpow(M, n - 1);          // [f_n, f_{n-1}]^T = M^(n-1) * [f_1, f_0]^T\n    return P[0][0];                   // f_n = P[0][0]*f_1 + P[0][1]*f_0 = P[0][0]\n}\n\n// P1939 矩阵加速：a[1]=a[2]=a[3]=1, a[n]=a[n-1]+a[n-3]\nlong long seq(long long n) {\n    if (n <= 3) return 1;\n    Mat M = {{1, 0, 1}, {1, 0, 0}, {0, 1, 0}};   // 递推 a_n = a_{n-1} + a_{n-3}\n    Mat P = mpow(M, n - 3);\n    // a_n = P[0][0]*a_3 + P[0][1]*a_2 + P[0][2]*a_1\n    return (P[0][0] + P[0][1] + P[0][2]) % MOD;\n}\n\n// min-plus 矩阵乘法（广义）：恰好 k 步最短路\nMat mulMinPlus(const Mat& a, const Mat& b) {\n    int n = a.size();\n    const long long INF = 1e18;\n    Mat c(n, vector<long long>(n, INF));\n    for (int i = 0; i < n; i++)\n        for (int t = 0; t < n; t++) if (a[i][t] < INF)\n            for (int j = 0; j < n; j++) if (b[t][j] < INF)\n                c[i][j] = min(c[i][j], a[i][t] + b[t][j]);\n    return c;\n}\n\nint main() {\n    cout << \"fib(10) = \" << fib(10) << endl;   // 55\n    cout << \"seq(10) = \" << seq(10) << endl;   // 19\n    return 0;\n}",
+      "thinkingQuestions": [
+        {
+          "q": "为什么常系数线性递推可以用矩阵快速幂？",
+          "hint": "转移是线性的、系数不变。",
+          "answer": "递推式 f_n = Σc_i·f_{n-i} 是线性组合且系数恒定，可以写成\"状态向量 × 转移矩阵\"的线性变换；矩阵乘法的结合律使得 M^n 可以快速幂计算，n 次线性转移压缩成一次矩阵幂。"
+        },
+        {
+          "q": "广义矩阵乘法（min-plus）为什么也能快速幂？",
+          "hint": "结合律。",
+          "answer": "矩阵快速幂只依赖乘法的结合律。min-plus 乘法（C[i][j]=min(A[i][k]+B[k][j])）满足结合律（本质是 min 与 + 的分配性），因此同样可以快速幂，用于\"恰好 k 步的最短路\"等问题。"
+        },
+        {
+          "q": "什么信号表明该用矩阵加速而不是直接递推？",
+          "hint": "n 巨大 + 递推线性。",
+          "answer": "n 达到 1e9~1e18（数组开不下、O(n) 超时）、递推式是低阶线性常系数、状态维度 k 小（≤100）——三者同时满足时矩阵加速是标准解；若 n 仅 1e7 且常数允许，直接循环递推往往更快。"
+        }
+      ]
+    },
+    {
+      "id": "plug-dp",
+      "name": "轮廓线 / 插头 DP",
+      "nameEn": "Plug DP",
+      "category": "动态规划",
+      "difficulty": 5,
+      "frequency": 2,
+      "tags": [
+        "竞赛"
+      ],
+      "prerequisites": [
+        "bitmask-dp"
+      ],
+      "summary": "棋盘按格转移的状压（轮廓线 DP）与插头 DP——n×m 棋盘、哈密顿回路等，省选/ICPC 进阶。",
+      "content": "## 核心思想\n\n棋盘类问题（放棋子、铺砖、回路）当 m 很小（≤ 10）时，除了**按行状压**，还有**按格转移**的轮廓线 DP：状态记录当前行已确定部分 + 下一行边界的\"轮廓线\"，逐格推进，把 $O(n·2^m·2^m)$ 优化到 $O(nm·2^m)$。社区经验：\"棋盘上按格转移的状压 dp 可以节省时间复杂度，代价是代码量较大\"。\n\n## 一、轮廓线 DP（逐格转移）\n\n铺砖问题：`dp[status]` 表示当前格上方/左侧轮廓线的覆盖状态，每格枚举\"不放 / 横放 / 竖放\"：\n\n```cpp\n// 例：1x2 多米诺铺满 n×m 棋盘（m ≤ 10），逐格推进\nint dp[2][1<<m];   // 滚动行；status 记录轮廓线上每格是否被左侧覆盖\nfor (int i = 0; i < n; i++)\n    for (int j = 0; j < m; j++) {\n        memset(dp[cur], 0, sizeof dp[cur]);\n        for (int s = 0; s < (1<<m); s++) {\n            if (s >> j & 1) {              // 当前格已被覆盖：跳过\n                dp[cur][s ^ (1<<j)] += dp[pre][s];\n            } else {\n                dp[cur][s | (1<<j)] += dp[pre][s];                 // 竖放\n                if (j+1 < m && !(s >> (j+1) & 1))\n                    dp[cur][s | (1<<(j+1))] += dp[pre][s];          // 横放\n            }\n        }\n    }\n```\n\n- 洛谷：P2289 马戏团里的小丑？——不，经典入门是 **P2607 后补**。入门常用 CF/蓝桥题；洛谷模板：P5056【模板】插头dp、P2289【模板】插头dp？(以实际为准)。**推荐按 P5056 学插头，轮廓线用模板题练手**。\n\n## 二、插头 DP（Plug DP）\n\n插头 DP 是轮廓线 DP 的进阶，状态记录轮廓线上的**插头类型**（有无插头 / 左右括号编号），专门解决：哈密顿回路（P5056）、回路/路径覆盖、连通性问题。\n\n- **状态压缩**：每个位置 0（无插头）/ 1（左括号）/ 2（右括号），用四进制或括号序列编码。\n- **转移分类**：合并插头（形成回路）、延续插头（直线/拐弯）、创建插头、结束插头。分类讨论是代码量大的根源。\n- 经典应用：P5056 求哈密顿回路数；P3190 神奇游乐园（最大权回路）。\n\n## 三、常见模型\n\n1. **铺砖计数**（1x2/1x3 覆盖方案数）。\n2. **棋盘连通性**（回路数量、连通块数量约束）。\n3. **插头回路 / 哈密顿回路计数**（P5056 模板）。\n4. **按格状压的棋盘最值**（炮兵阵地 P2704 的按格优化版）。\n\n## 四、社区经验与坑点\n\n1. **m 小是前提**：m > 10 时状态爆炸，换思路。\n2. **滚动数组**：按格转移必用 `dp[2][state]` 滚动。\n3. **状态编码**：插头用括号序列编码时注意进制与哈希（状态稀疏用 unordered_map）。\n4. **边界处理**：每行最后一格到下一行第一格的状态转移要特判。\n5. **先会轮廓线，再学插头**：插头 DP 本质是轮廓线 + 连通性标记。\n\n## 复杂度\n\n- 轮廓线：$O(nm·2^m)$。\n- 插头 DP：$O(nm·2^m)$（常数大，状态稀疏时实际更优）。",
+      "templateCode": "#include <bits/stdc++.h>\nusing namespace std;\n\n// 轮廓线 DP：1x2 多米诺铺满 n×m 的方案数（m ≤ 12）\nlong long dominoCover(int n, int m) {\n    if ((n * m) & 1) return 0;               // 奇数格不可能铺满\n    vector<long long> dp(1 << m, 0);\n    dp[0] = 1;\n    for (int i = 0; i < n; i++) {\n        for (int j = 0; j < m; j++) {\n            vector<long long> ndp(1 << m, 0);\n            for (int s = 0; s < (1 << m); s++) {\n                if (s >> j & 1) {\n                    ndp[s ^ (1 << j)] += dp[s];              // 已被覆盖，直接跳过\n                } else {\n                    ndp[s | (1 << j)] += dp[s];              // 竖放\n                    if (j + 1 < m && !(s >> (j + 1) & 1))\n                        ndp[s | (1 << (j + 1))] += dp[s];     // 横放\n                }\n            }\n            dp = ndp;\n        }\n    }\n    return dp[0];\n}\n\nint main() {\n    cout << \"3x4 = \" << dominoCover(3, 4) << endl;   // 3\n    cout << \"4x4 = \" << dominoCover(4, 4) << endl;   // 36\n    return 0;\n}",
+      "thinkingQuestions": [
+        {
+          "q": "轮廓线 DP 相比按行状压，优势在哪？",
+          "hint": "状态数从 2^m * 2^m 降到 2^m。",
+          "answer": "按行转移需要同时记录上一行和当前行状态，枚举 2^m × 2^m；轮廓线 DP 把边界压缩成一条 m 格的轮廓线，逐格推进只保留 2^m 个状态，且支持铺砖等\"相邻两格耦合\"的问题，时空均更优。"
+        },
+        {
+          "q": "插头 DP 为什么要用括号序列/多进制编码插头？",
+          "hint": "需要区分连通性配对。",
+          "answer": "回路问题中插头必须两两配对形成连通块，二进制 0/1 无法表达\"哪个插头与哪个配对\"，括号序列（0/左/右）能编码配对关系，转移时通过括号匹配维护连通性，避免产生提前闭合的错误回路。"
+        },
+        {
+          "q": "插头 DP 代码量大，有什么降低出错率的方法？",
+          "hint": "封装转移分类 + 哈希状态。",
+          "answer": "把转移按\"当前格有无上插头/左插头\"四种情况封装成函数，逐类处理；状态稀疏时用 unordered_map 存状态而不是开满数组；每格转移后、每行结束时做一次状态合法性检查，能显著减少调试成本。"
         }
       ]
     },
